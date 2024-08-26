@@ -2,7 +2,7 @@
   "name": "proofpoint-threat-response",
   "label": "Proofpoint Threat Response",
   "version": "1.0.0",
-  "description": "Proofpoint Threat Response connector is used to orchestrate and automate incident response.",
+  "description": "Proofpoint Threat Response is a solution designed to help organizations manage and respond to cybersecurity threats. It provides tools and features to identify, investigate, and remediate security incidents.",
   "publisher": "Fortinet",
   "category": "Threat Response",
   "cs_approved": false,
@@ -23,7 +23,7 @@
         "description": "Specify the URL of the Proofpoint Threat Response server to connect and perform automated operations."
       },
       {
-        "title": "username",
+        "title": "Username",
         "required": true,
         "editable": true,
         "visible": true,
@@ -101,8 +101,8 @@
           "name": "indicator",
           "title": "Indicator",
           "type": "text",
-          "description": "Specify the Indicator values. Value can be IP Address, URLs. Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
-          "tooltip": "Specify the Indicator values. Value can be IP Address, URLs. Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
+          "description": "Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
+          "tooltip": "Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
           "required": true,
           "editable": true,
           "visible": true
@@ -255,7 +255,7 @@
     },
     {
       "operation": "block_hash",
-      "title": "Block Hash",
+      "title": "Block File Hash",
       "category": "containment",
       "annotation": "block_hash",
       "description": "Block the supplied file hashes to the specified file hash block list.",
@@ -263,7 +263,7 @@
       "parameters": [
         {
           "name": "indicator",
-          "title": "Hash",
+          "title": "File Hash",
           "type": "text",
           "description": "Specify a comma-separated list of file hashes to add to the file hash block list.",
           "tooltip": "Specify a comma-separated list of file hashes to add to the file hash block list.",
@@ -331,7 +331,7 @@
       "http_method": "DELETE",
       "category": "investigation",
       "annotation": "delete_indicator",
-      "description": "Delete Indicator",
+      "description": "Removes an indicator from Proofpoint Threat Response based on the input parameters.",
       "output_schema": [],
       "parameters": [
         {
@@ -802,7 +802,7 @@
       "title": "Close Incident",
       "category": "investigation",
       "annotation": "close_incident",
-      "description": "Close an incident.",
+      "description": "Close an incident in Proofpoint Threat Response based on the input parameters you have specified.",
       "output_schema": [],
       "parameters": [
         {
