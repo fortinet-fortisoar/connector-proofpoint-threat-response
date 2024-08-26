@@ -1,0 +1,883 @@
+{
+  "name": "proofpoint-threat-response",
+  "label": "Proofpoint Threat Response",
+  "version": "1.0.0",
+  "description": "Proofpoint Threat Response is a solution designed to help organizations manage and respond to cybersecurity threats. It provides tools and features to identify, investigate, and remediate security incidents.",
+  "publisher": "Fortinet",
+  "category": "Threat Response",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "tooltip": "Specify the URL of the Proofpoint Threat Response server to connect and perform automated operations.",
+        "description": "Specify the URL of the Proofpoint Threat Response server to connect and perform automated operations."
+      },
+      {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username",
+        "parameter_type": "header_param",
+        "description": "Specify the Username used to access the Proofpoint Threat Response server to connect and perform automated operations.",
+        "tooltip": "Specify the Username used to access the Proofpoint Threat Response server to connect and perform automated operations."
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "password",
+        "parameter_type": "header_param",
+        "description": "Specify the Password used to access the Proofpoint Threat Response server to connect and perform automated operations.",
+        "tooltip": "Specify the Password used to access the Proofpoint Threat Response server to connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_list",
+      "title": "Get List",
+      "category": "investigation",
+      "annotation": "get_list",
+      "description": "Gets items for the specified list.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "list_id",
+          "title": "List ID",
+          "type": "text",
+          "description": "Specify the ID of list to fetch the details.",
+          "tooltip": "Specify the ID of list to fetch the details.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_to_list",
+      "title": "Add To List",
+      "category": "investigation",
+      "annotation": "add_to_list",
+      "description": "Adds a member to the specified list.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "list_id",
+          "title": "List ID",
+          "type": "text",
+          "description": "Specify the ID of list to add provided members.",
+          "tooltip": "Specify the ID of list to add provided members.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "indicator",
+          "title": "Indicator",
+          "type": "text",
+          "description": "Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
+          "tooltip": "Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "description",
+          "title": "Comment",
+          "type": "text",
+          "description": "Specify the comment to add with this operation.",
+          "tooltip": "Specify the comment to add with this operation.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expiration",
+          "title": "Expiration",
+          "type": "datetime",
+          "description": "Specify the expiration of the member.",
+          "tooltip": "Specify the expiration of the member.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "block_ip",
+      "title": "Block IP",
+      "category": "containment",
+      "annotation": "block_ip",
+      "description": "Block the supplied IP Addresses to the specified IP Addresses block list.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "indicator",
+          "title": "IP Address",
+          "type": "text",
+          "description": "Specify a comma-separated list of IP addresses to add to the block list.",
+          "tooltip": "Specify a comma-separated list of IP addresses to add to the block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "list_id",
+          "title": "Blacklist ID",
+          "type": "text",
+          "description": "Specify the Id of IP block list.",
+          "tooltip": "Specify the Id of IP block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expiration",
+          "title": "Expiration",
+          "type": "datetime",
+          "description": "Specify the date and time the supplied IP addresses should be removed from the block list.",
+          "tooltip": "Specify the date and time the supplied IP addresses should be removed from the block list.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "block_domain",
+      "title": "Block Domain",
+      "category": "containment",
+      "annotation": "block_domain",
+      "description": "Block the supplied domains to the specified domains block list.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "indicator",
+          "title": "Domain",
+          "type": "text",
+          "description": "Specify a comma-separated list of domains to add to the block list.",
+          "tooltip": "Specify a comma-separated list of domains to add to the block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "list_id",
+          "title": "Blacklist ID",
+          "type": "text",
+          "description": "Specify the Id of domain block list.",
+          "tooltip": "Specify the Id of domain block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expiration",
+          "title": "Expiration",
+          "type": "datetime",
+          "description": "Specify the date and time the supplied domains should be removed from the block list.",
+          "tooltip": "Specify the date and time the supplied domains should be removed from the block list.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "block_url",
+      "title": "Block URL",
+      "category": "containment",
+      "annotation": "block_url",
+      "description": "Block the supplied URLs to the specified URLs block list.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "indicator",
+          "title": "URL",
+          "type": "text",
+          "description": "Specify a comma-separated list of URLs to add to the block list.",
+          "tooltip": "Specify a comma-separated list of URLs to add to the block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "list_id",
+          "title": "Blacklist ID",
+          "type": "text",
+          "description": "Specify the Id of URL block list.",
+          "tooltip": "Specify the Id of URL block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expiration",
+          "title": "Expiration",
+          "type": "datetime",
+          "description": "Specify the date and time the supplied URLs should be removed from the block list.",
+          "tooltip": "Specify the date and time the supplied URLs should be removed from the block list.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "block_hash",
+      "title": "Block File Hash",
+      "category": "containment",
+      "annotation": "block_hash",
+      "description": "Block the supplied file hashes to the specified file hash block list.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "indicator",
+          "title": "File Hash",
+          "type": "text",
+          "description": "Specify a comma-separated list of file hashes to add to the file hash block list.",
+          "tooltip": "Specify a comma-separated list of file hashes to add to the file hash block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "list_id",
+          "title": "Blacklist ID",
+          "type": "text",
+          "description": "Specify the Id of hashes block list.",
+          "tooltip": "Specify the Id of hashes block list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expiration",
+          "title": "Expiration",
+          "type": "datetime",
+          "description": "Specify the date and time the supplied file hashes should be removed from the block list.",
+          "tooltip": "Specify the date and time the supplied file hashes should be removed from the block list.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_indicator",
+      "title": "Search Indicator",
+      "category": "investigation",
+      "annotation": "search_indicator",
+      "description": "Get the indicators from the specified list, according to the defined filter.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "filter",
+          "title": "Filter",
+          "type": "text",
+          "description": "Specify the filter for the indicator search. e.g. For example, \"1.1\" will return [1.1.1.1, 22.22.1.1, 1.1.22.22]",
+          "tooltip": "Specify the filter for the indicator search. e.g. For example, \"1.1\" will return [1.1.1.1, 22.22.1.1, 1.1.22.22]",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "list_id",
+          "title": "Blacklist ID",
+          "type": "text",
+          "description": "Specify the ID of the list in which to search.",
+          "tooltip": "Specify the ID of the list in which to search.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "delete_indicator",
+      "title": "Delete Indicator",
+      "http_method": "DELETE",
+      "category": "investigation",
+      "annotation": "delete_indicator",
+      "description": "Removes an indicator from Proofpoint Threat Response based on the input parameters.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "list_id",
+          "title": "List ID",
+          "type": "text",
+          "description": "Specify the ID of list to delete provided members.",
+          "tooltip": "Specify the ID of list to delete provided members.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "indicator_id",
+          "title": "Indicator ID",
+          "type": "text",
+          "description": "Specify the indicator ID to delete from the list.",
+          "tooltip": "Specify the indicator ID to delete from the list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_incident",
+      "title": "Get Incident",
+      "category": "investigation",
+      "annotation": "get_incident",
+      "description": "Get incident metadata from Threat Response.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "incident_id",
+          "title": "Incident ID",
+          "type": "text",
+          "description": "Specify ID of incident to fetch details.",
+          "tooltip": "Specify ID of incident to fetch details.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expand_events",
+          "title": "Expand Events",
+          "type": "checkbox",
+          "description": "If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "tooltip": "If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_incidents",
+      "title": "Get Incidents",
+      "category": "investigation",
+      "annotation": "get_incidents",
+      "description": "Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "state",
+          "title": "State",
+          "type": "select",
+          "description": "Specify the state of the incidents to retrieve.",
+          "tooltip": "Specify the state of the incidents to retrieve.",
+          "options": [
+            "New",
+            "Open",
+            "Assigned",
+            "Closed",
+            "Ignored"
+          ],
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "created_after",
+          "title": "Create After",
+          "type": "datetime",
+          "description": "Specify the date and time to retrieve incidents that were created after this date.",
+          "tooltip": "Specify the date and time to retrieve incidents that were created after this date.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "created_before",
+          "title": "Created Before",
+          "type": "datetime",
+          "description": "Specify the date and time to retrieve incidents that were created before this date.",
+          "tooltip": "Specify the date and time to retrieve incidents that were created before this date.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "closed_after",
+          "title": "Closed After",
+          "type": "datetime",
+          "description": "Specify the date and time to retrieve incidents that were closed after this date.",
+          "tooltip": "Specify the date and time to retrieve incidents that were closed after this date.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "closed_before",
+          "title": "Closed Before",
+          "type": "datetime",
+          "description": "Specify the date and time to retrieve incidents that were closed before this date.",
+          "tooltip": "Specify the date and time to retrieve incidents that were closed before this date.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "expand_events",
+          "title": "Expand Events",
+          "type": "checkbox",
+          "description": "Specify the expand events check, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "tooltip": "Specify the expand events check, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "limit",
+          "title": "Limit",
+          "type": "text",
+          "description": "Specify the maximum number of incidents to return. The default value is 50.",
+          "tooltip": "Specify the maximum number of incidents to return. The default value is 50.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": 50
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_comment_to_incident",
+      "title": "Add Comment To Incident",
+      "category": "investigation",
+      "annotation": "add_comment_to_incident",
+      "description": "Adds comments to an existing Threat Response incident, by incident ID.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "incident_id",
+          "title": "Incident ID",
+          "type": "text",
+          "description": "Specify the incident Id for add comment into.",
+          "tooltip": "Specify the incident Id for add comment into.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "comment",
+          "title": "Comment",
+          "type": "text",
+          "description": "Specify the comment to add.",
+          "tooltip": "Specify the comment to add.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "description",
+          "title": "Description",
+          "type": "text",
+          "description": "Specify the description to add this operation.",
+          "tooltip": "Specify the description to add this operation.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "update_comment_to_incident",
+      "title": "Update Comment To Incident",
+      "category": "investigation",
+      "annotation": "update_comment_to_incident",
+      "description": "Update the comments to an existing Threat Response incident, by incident ID.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "incident_id",
+          "title": "Incident ID",
+          "type": "text",
+          "description": "Specify the incident Id for update comment into.",
+          "tooltip": "Specify the incident Id for update comment into.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "comment",
+          "title": "Comment",
+          "type": "text",
+          "description": "Specify the comment to update.",
+          "tooltip": "Specify the comment to update.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "description",
+          "title": "Description",
+          "type": "text",
+          "description": "Specify the description to add this operation.",
+          "tooltip": "Specify the description to add this operation.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_user_to_incident",
+      "title": "Add User To Incident",
+      "category": "investigation",
+      "annotation": "add_user_to_incident",
+      "description": "Assigns a user to an incident as a target or attacker.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "incident_id",
+          "title": "Incident ID",
+          "type": "text",
+          "description": "Specify the incident ID value of the incident to add the user to.",
+          "tooltip": "Specify the incident ID value of the incident to add the user to.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "targets",
+          "title": "Targets",
+          "type": "text",
+          "description": "Specify the list of Targets to add to the incident.",
+          "tooltip": "Specify the list of Targets to add to the incident.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "attackers",
+          "title": "Attackers",
+          "type": "text",
+          "description": "Specify the list of Attackers to add to the incident.",
+          "tooltip": "Specify the list of Attackers to add to the incident.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "ingest_alert",
+      "title": "Ingest Alert",
+      "category": "investigation",
+      "annotation": "ingest_alert",
+      "description": "Ingest an alert into Threat Response.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "json_version",
+          "title": "JSON Version",
+          "type": "text",
+          "description": "Specify the Threat Response JSON version.\nPossible values are: 2.0, 1.0. Default is 2.0.",
+          "tooltip": "Specify the Threat Response JSON version.\nPossible values are: 2.0, 1.0. Default is 2.0.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": "2.0"
+        },
+        {
+          "name": "post_url_id",
+          "title": "Post URL ID",
+          "type": "text",
+          "description": "Specify the POST URL of the JSON alert source. You can find it by navigating to Sources -> JSON event source -> POST URL.",
+          "tooltip": "Specify the POST URL of the JSON alert source. You can find it by navigating to Sources -> JSON event source -> POST URL.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "attacker",
+          "title": "Attacker",
+          "type": "json",
+          "description": "Specify an attacker object in JSON format : \"{\"attacker\" : {...}}\". The attacker object must contain one of [\"ip_address\", mac_address\", \"host_name\", \"url\", \"user\"] keys. You can also add the \"port\" key to the object. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify an attacker object in JSON format : \"{\"attacker\" : {...}}\". The attacker object must contain one of [\"ip_address\", mac_address\", \"host_name\", \"url\", \"user\"] keys. You can also add the \"port\" key to the object. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "classification",
+          "title": "Classification",
+          "type": "select",
+          "description": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
+          "tooltip": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
+          "select": [
+            "Malware",
+            "Policy Violation",
+            "Vulnerability",
+            "Network",
+            "Spam",
+            "Phish",
+            "Command and Control",
+            "Data Match",
+            "Authentication",
+            "System Behavior",
+            "Impostor",
+            "Reported Abuse",
+            "Unknown"
+          ],
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "cnc_hosts",
+          "title": "CNC Hosts",
+          "type": "json",
+          "description": "Specify the Command and Control host information in JSON format : \"{\"cnc_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}, ...]}\".\nNote: Every item of the \"cnc_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify the Command and Control host information in JSON format : \"{\"cnc_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}, ...]}\".\nNote: Every item of the \"cnc_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "detector",
+          "title": "Detector",
+          "type": "json",
+          "description": "Specify the threat detection tool such as Firewall and IPS/IDS systems (in the format: \"{\"detector\" : {...}}\"), which generated the original alert. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify the threat detection tool such as Firewall and IPS/IDS systems (in the format: \"{\"detector\" : {...}}\"), which generated the original alert. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "email",
+          "title": "Email",
+          "type": "json",
+          "description": "Specify the email metadata related to the alert, in JSON format: \"{\"email\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify the email metadata related to the alert, in JSON format: \"{\"email\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "forensics_hosts",
+          "title": "Forensics Hosts",
+          "type": "json",
+          "description": "Specify the forensics host information in JSON format : \"{\"forensics_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}...]}\".\nNote: Every item of the \"forensics_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify the forensics host information in JSON format : \"{\"forensics_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}...]}\".\nNote: Every item of the \"forensics_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "link_attribute",
+          "title": "Link Attribute",
+          "type": "select",
+          "description": "Specify the attribute to link alerts to.",
+          "tooltip": "Specify the attribute to link alerts to.",
+          "options": [
+            "Target IP Address",
+            "Target Hostname",
+            "Target Machine Name",
+            "Target User",
+            "Target Mac Address",
+            "Attacker IP Address",
+            "Attacker Hostname",
+            "Attacker Machine Name",
+            "Attacker User",
+            "Attacker Mac Address",
+            "Email Recipient",
+            "Email Sender",
+            "Email Subject",
+            "Message ID",
+            "Threat Filename",
+            "Threat Filehash"
+          ],
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "severity",
+          "title": "Severity",
+          "type": "select",
+          "description": "Specify the severity of the alert.",
+          "tooltip": "Specify the severity of the alert.",
+          "options": [
+            "Info",
+            "Minor",
+            "Moderate",
+            "Major",
+            "Critical",
+            "Informational",
+            "Low",
+            "Medium",
+            "High",
+            "Critical"
+          ],
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "summary",
+          "title": "Summary",
+          "type": "text",
+          "description": "Specify the alert summary. This argument will populate the Alert Details field.",
+          "tooltip": "Specify the alert summary. This argument will populate the Alert Details field.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "target",
+          "title": "Target",
+          "type": "json",
+          "description": "Specify the target host information in JSON format : \"{\"target\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify the target host information in JSON format : \"{\"target\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "threat_info",
+          "title": "Threat Info",
+          "type": "json",
+          "description": "Specify the threat information in JSON format: \"{\"threat_info\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify the threat information in JSON format: \"{\"threat_info\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "custom_fields",
+          "title": "Custom Fields",
+          "type": "json",
+          "description": "Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Threat Response, in the format: \"{\"custom_fields\": {..}}\". Although there is no limit to the number of custom fields, Proofpoint recommends keeping it to 10 or fewer fields. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "tooltip": "Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Threat Response, in the format: \"{\"custom_fields\": {..}}\". Although there is no limit to the number of custom fields, Proofpoint recommends keeping it to 10 or fewer fields. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "close_incident",
+      "title": "Close Incident",
+      "category": "investigation",
+      "annotation": "close_incident",
+      "description": "Close an incident in Proofpoint Threat Response based on the input parameters you have specified.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "incident_id",
+          "title": "Incident ID",
+          "type": "text",
+          "description": "Specify the ID value of the incident to close.",
+          "tooltip": "Specify the ID value of the incident to close.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "comment",
+          "title": "Comment",
+          "type": "text",
+          "description": "Specify the details for the closure notes.",
+          "tooltip": "Specify the details for the closure notes.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "description",
+          "title": "Description",
+          "type": "text",
+          "description": "Specify the summary for the closure notes.",
+          "tooltip": "Specify the summary for the closure notes.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "verify_quarantine",
+      "title": "Verify Quarantine",
+      "category": "investigation",
+      "annotation": "verify_quarantine",
+      "description": "Verify if an email has been quarantined.",
+      "output_schema": [],
+      "parameters": [
+        {
+          "name": "message_id",
+          "title": "Message ID",
+          "type": "text",
+          "description": "Specify the ID value of an email.",
+          "tooltip": "Specify the ID value of an email.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "time",
+          "title": "Time",
+          "type": "text",
+          "description": "Specify the email delivery time (ISO8601 format).",
+          "tooltip": "Specify the email delivery time (ISO8601 format).",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "name": "recipient",
+          "title": "Recipient",
+          "type": "text",
+          "description": "Specify the email recipient.",
+          "tooltip": "Specify the email recipient.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
