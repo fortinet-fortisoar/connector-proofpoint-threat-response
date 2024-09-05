@@ -645,7 +645,7 @@
           "type": "select",
           "description": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
           "tooltip": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
-          "select": [
+          "options": [
             "Malware",
             "Policy Violation",
             "Vulnerability",
