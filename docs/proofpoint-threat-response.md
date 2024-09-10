@@ -33,6 +33,7 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 </td>
 </tr><tr><td>Verify SSL</td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set to True.</td></tr>
 </tbody></table>
+
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations:
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Indicators List</td><td>Retrieves all indicators from the specified list.</td><td>get_list <br/>Investigation</td></tr>
@@ -52,13 +53,16 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Close Incident</td><td>Close an incident in Proofpoint Threat Response based on the input parameters you have specified.</td><td>close_incident <br/>Investigation</td></tr>
 <tr><td>Verify Quarantine</td><td>Verify if an email has been quarantined.</td><td>verify_quarantine <br/>Investigation</td></tr>
 </tbody></table>
+
 ### operation: Get Indicators List
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to fetch the details.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
+
 ### operation: Add Indicators
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to add provided indicators.
@@ -66,6 +70,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Comment</td><td>(Optional) Specify the comment to add with this operation.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the expiration of the indicator.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -75,6 +80,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Blacklist ID</td><td>Specify the ID of IP block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied IP addresses should be removed from the block list.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -84,6 +90,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Blacklist ID</td><td>Specify the ID of domain block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied domains should be removed from the block list.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -93,6 +100,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Blacklist ID</td><td>Specify the ID of URL block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied URLs should be removed from the block list.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -102,6 +110,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Blacklist ID</td><td>Specify the ID of hashes block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied file hashes should be removed from the block list.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -110,6 +119,7 @@ The following automated operations can be included in playbooks and you can also
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Filter</td><td>(Optional) Specify the filter for the indicator search. e.g. For example, "1.1" will return [1.1.1.1, 22.22.1.1, 1.1.22.22]
 </td></tr><tr><td>Blacklist ID</td><td>Specify the ID of the list in which to search.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -118,6 +128,7 @@ The following automated operations can be included in playbooks and you can also
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to delete provided members.
 </td></tr><tr><td>Indicator ID</td><td>Specify the indicator ID to delete from the list.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -126,6 +137,7 @@ The following automated operations can be included in playbooks and you can also
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify ID of incident to fetch details.
 </td></tr><tr><td>Expand Events</td><td>Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -139,6 +151,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Expand Events</td><td>(Optional) Specify the expand events check, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.
 </td></tr><tr><td>Limit</td><td>(Optional) Specify the maximum number of incidents to return. The default value is 50.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -148,6 +161,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Comment</td><td>Specify the comment to add.
 </td></tr><tr><td>Description</td><td>(Optional) Specify the description to add this operation.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -157,6 +171,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Comment</td><td>(Optional) Specify the comment to update.
 </td></tr><tr><td>Description</td><td>(Optional) Specify the description to add this operation.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -166,6 +181,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Targets</td><td>Specify the list of targets to add to the incident.
 </td></tr><tr><td>Attackers</td><td>Specify the list of attackers to add to the incident.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -189,6 +205,7 @@ Note: Every item of the "forensics_hosts" list is in JSON format. For more infor
 </td></tr><tr><td>Threat Info</td><td>(Optional) Specify the threat information in JSON format: "{"threat_info": {...}}". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under "JSON Alert Source 2.0".
 </td></tr><tr><td>Custom Fields</td><td>(Optional) Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Threat Response, in the format: "{"custom_fields": {..}}". Although there is no limit to the number of custom fields, Proofpoint recommends keeping it to 10 or fewer fields. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under "JSON Alert Source 2.0".
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -198,6 +215,7 @@ Note: Every item of the "forensics_hosts" list is in JSON format. For more infor
 </td></tr><tr><td>Comment</td><td>Specify the details for the closure notes.
 </td></tr><tr><td>Description</td><td>Specify the summary for the closure notes.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
@@ -207,6 +225,7 @@ Note: Every item of the "forensics_hosts" list is in JSON format. For more infor
 </td></tr><tr><td>Time</td><td>Specify the email delivery time (ISO8601 format).
 </td></tr><tr><td>Recipient</td><td>Specify the email recipient.
 </td></tr></tbody></table>
+
 #### Output
 
  No output schema is available at this time.
