@@ -34,13 +34,13 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 </tbody></table>
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations:
-<table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get List</td><td>Gets items for the specified list.</td><td>get_list <br/>Investigation</td></tr>
-<tr><td>Add To List</td><td>Adds a member to the specified list.</td><td>add_to_list <br/>Investigation</td></tr>
-<tr><td>Block IP</td><td>Block the supplied IP Addresses to the specified IP Addresses block list.</td><td>block_ip <br/>Containment</td></tr>
+<table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get List of Indicators</td><td>Retrieves all indicators from the specified list.</td><td>get_list <br/>Investigation</td></tr>
+<tr><td>Add Indicators</td><td>Add indicators to the specified list.</td><td>add_to_list <br/>Investigation</td></tr>
+<tr><td>Block IP Addresses</td><td>Block the supplied IP Addresses in to the specified IP Addresses block list.</td><td>block_ip <br/>Containment</td></tr>
 <tr><td>Block Domain</td><td>Block the supplied domains to the specified domains block list.</td><td>block_domain <br/>Containment</td></tr>
 <tr><td>Block URL</td><td>Block the supplied URLs to the specified URLs block list.</td><td>block_url <br/>Containment</td></tr>
 <tr><td>Block File Hash</td><td>Block the supplied file hashes to the specified file hash block list.</td><td>block_hash <br/>Containment</td></tr>
-<tr><td>Search Indicator</td><td>Get the indicators from the specified list, according to the defined filter.</td><td>search_indicator <br/>Investigation</td></tr>
+<tr><td>Search Indicator</td><td>Retrieves the indicators from the specified list, according to the defined filter.</td><td>search_indicator <br/>Investigation</td></tr>
 <tr><td>Delete Indicator</td><td>Removes an indicator from Proofpoint Threat Response based on the input parameters.</td><td>delete_indicator <br/>Investigation</td></tr>
 <tr><td>Get Incident</td><td>Get incident metadata from Threat Response.</td><td>get_incident <br/>Investigation</td></tr>
 <tr><td>Get Incidents</td><td>Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.</td><td>get_incidents <br/>Investigation</td></tr>
@@ -51,24 +51,24 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Close Incident</td><td>Close an incident in Proofpoint Threat Response based on the input parameters you have specified.</td><td>close_incident <br/>Investigation</td></tr>
 <tr><td>Verify Quarantine</td><td>Verify if an email has been quarantined.</td><td>verify_quarantine <br/>Investigation</td></tr>
 </tbody></table>
-### operation: Get List
+### operation: Get List of Indicators
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to fetch the details.
 </td></tr></tbody></table>
 #### Output
 
  No output schema is available at this time.
-### operation: Add To List
+### operation: Add Indicators
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to add provided members.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to add provided indicators.
 </td></tr><tr><td>Indicator</td><td>Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2
 </td></tr><tr><td>Comment</td><td>(Optional) Specify the comment to add with this operation.
-</td></tr><tr><td>Expiration</td><td>(Optional) Specify the expiration of the member.
+</td></tr><tr><td>Expiration</td><td>(Optional) Specify the expiration of the indicator.
 </td></tr></tbody></table>
 #### Output
 
  No output schema is available at this time.
-### operation: Block IP
+### operation: Block IP Addresses
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>IP Address</td><td>Specify a comma-separated list of IP addresses to add to the block list.
 </td></tr><tr><td>Blacklist ID</td><td>Specify the Id of IP block list.
@@ -123,7 +123,7 @@ The following automated operations can be included in playbooks and you can also
 ### operation: Get Incident
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify ID of incident to fetch details.
-</td></tr><tr><td>Expand Events</td><td>If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.
+</td></tr><tr><td>Expand Events</td><td>Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.
 </td></tr></tbody></table>
 #### Output
 
@@ -143,7 +143,7 @@ The following automated operations can be included in playbooks and you can also
  No output schema is available at this time.
 ### operation: Add Comment To Incident
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident Id for add comment into.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident Id.
 </td></tr><tr><td>Comment</td><td>Specify the comment to add.
 </td></tr><tr><td>Description</td><td>(Optional) Specify the description to add this operation.
 </td></tr></tbody></table>
@@ -152,7 +152,7 @@ The following automated operations can be included in playbooks and you can also
  No output schema is available at this time.
 ### operation: Update Comment To Incident
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident Id for update comment into.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident Id.
 </td></tr><tr><td>Comment</td><td>(Optional) Specify the comment to update.
 </td></tr><tr><td>Description</td><td>(Optional) Specify the description to add this operation.
 </td></tr></tbody></table>
@@ -161,9 +161,9 @@ The following automated operations can be included in playbooks and you can also
  No output schema is available at this time.
 ### operation: Add User To Incident
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident ID value of the incident to add the user to.
-</td></tr><tr><td>Targets</td><td>Specify the list of Targets to add to the incident.
-</td></tr><tr><td>Attackers</td><td>Specify the list of Attackers to add to the incident.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident ID.
+</td></tr><tr><td>Targets</td><td>Specify the list of targets to add to the incident.
+</td></tr><tr><td>Attackers</td><td>Specify the list of attackers to add to the incident.
 </td></tr></tbody></table>
 #### Output
 
@@ -181,7 +181,7 @@ Note: Every item of the "cnc_hosts" list is in JSON format. For more information
 </td></tr><tr><td>Email</td><td>(Optional) Specify the email metadata related to the alert, in JSON format: "{"email": {...}}". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under "JSON Alert Source 2.0".
 </td></tr><tr><td>Forensics Hosts</td><td>(Optional) Specify the forensics host information in JSON format : "{"forensics_hosts": [{"host" : "-", "port": "-"}...]}".
 Note: Every item of the "forensics_hosts" list is in JSON format. For more information, see Proofpoint TRAP documentation under "JSON Alert Source 2.0".
-</td></tr><tr><td>Link Attribute</td><td>(Optional) Specify the attribute to link alerts to. you can choose from Target IP Address, Target Hostname, Target Machine Name, Target User, Target Mac Address, Attacker IP Address, Attacker Hostname, Attacker Machine Name, Attacker User, Attacker Mac Address, Email Recipient, Email Sender, Email Subject, Message ID, Threat Filename and Threat Filehash
+</td></tr><tr><td>Link Attribute</td><td>(Optional) Specify the attribute to link to the alerts. you can choose from Target IP Address, Target Hostname, Target Machine Name, Target User, Target Mac Address, Attacker IP Address, Attacker Hostname, Attacker Machine Name, Attacker User, Attacker Mac Address, Email Recipient, Email Sender, Email Subject, Message ID, Threat Filename and Threat Filehash
 </td></tr><tr><td>Severity</td><td>(Optional) Specify the severity of the alert. you can choose from Info, Minor, Moderate, Major, Critical, Informational, Low, Medium, High and Critical
 </td></tr><tr><td>Summary</td><td>(Optional) Specify the alert summary. This argument will populate the Alert Details field.
 </td></tr><tr><td>Target</td><td>(Optional) Specify the target host information in JSON format : "{"target": {...}}". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under "JSON Alert Source 2.0".
