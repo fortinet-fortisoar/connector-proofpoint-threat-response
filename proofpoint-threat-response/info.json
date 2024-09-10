@@ -359,7 +359,7 @@
     },
     {
       "operation": "get_incident",
-      "title": "Get Incident",
+      "title": "Get Incident By ID",
       "category": "investigation",
       "annotation": "get_incident",
       "description": "Get incident metadata from Threat Response.",
@@ -390,7 +390,7 @@
     },
     {
       "operation": "get_incidents",
-      "title": "Get Incidents",
+      "title": "Get Incidents List",
       "category": "investigation",
       "annotation": "get_incidents",
       "description": "Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.",

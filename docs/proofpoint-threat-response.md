@@ -43,8 +43,8 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Block File Hash</td><td>Block the supplied file hashes to the specified file hash block list.</td><td>block_hash <br/>Containment</td></tr>
 <tr><td>Search Indicator</td><td>Retrieves the indicators from the specified list, according to the defined filter.</td><td>search_indicator <br/>Investigation</td></tr>
 <tr><td>Delete Indicator</td><td>Removes an indicator from Proofpoint Threat Response based on the input parameters.</td><td>delete_indicator <br/>Investigation</td></tr>
-<tr><td>Get Incident</td><td>Get incident metadata from Threat Response.</td><td>get_incident <br/>Investigation</td></tr>
-<tr><td>Get Incidents</td><td>Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.</td><td>get_incidents <br/>Investigation</td></tr>
+<tr><td>Get Incident By ID</td><td>Get incident metadata from Threat Response.</td><td>get_incident <br/>Investigation</td></tr>
+<tr><td>Get Incidents List</td><td>Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.</td><td>get_incidents <br/>Investigation</td></tr>
 <tr><td>Add Comment To Incident</td><td>Adds comments to an existing Threat Response incident, by incident ID.</td><td>add_comment_to_incident <br/>Investigation</td></tr>
 <tr><td>Update Comment To Incident</td><td>Update the comments to an existing Threat Response incident, by incident ID.</td><td>update_comment_to_incident <br/>Investigation</td></tr>
 <tr><td>Add User To Incident</td><td>Assigns a user to an incident as a target or attacker.</td><td>add_user_to_incident <br/>Investigation</td></tr>
@@ -121,7 +121,7 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  No output schema is available at this time.
-### operation: Get Incident
+### operation: Get Incident By ID
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify ID of incident to fetch details.
 </td></tr><tr><td>Expand Events</td><td>Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.
@@ -129,7 +129,7 @@ The following automated operations can be included in playbooks and you can also
 #### Output
 
  No output schema is available at this time.
-### operation: Get Incidents
+### operation: Get Incidents List
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>State</td><td>(Optional) Specify the state of the incidents to retrieve. you can choose from New, Open, Assigned, Closed and Ignored
 </td></tr><tr><td>Create After</td><td>(Optional) Specify the date and time to retrieve incidents that were created after this date.
