@@ -60,7 +60,7 @@
   "operations": [
     {
       "operation": "get_list",
-      "title": "Get List of Indicators",
+      "title": "Get Indicators List",
       "category": "investigation",
       "annotation": "get_list",
       "description": "Retrieves all indicators from the specified list.",
@@ -152,8 +152,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of IP block list.",
-          "tooltip": "Specify the Id of IP block list.",
+          "description": "Specify the ID of IP block list.",
+          "tooltip": "Specify the ID of IP block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -193,8 +193,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of domain block list.",
-          "tooltip": "Specify the Id of domain block list.",
+          "description": "Specify the ID of domain block list.",
+          "tooltip": "Specify the ID of domain block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -234,8 +234,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of URL block list.",
-          "tooltip": "Specify the Id of URL block list.",
+          "description": "Specify the ID of URL block list.",
+          "tooltip": "Specify the ID of URL block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -275,8 +275,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of hashes block list.",
-          "tooltip": "Specify the Id of hashes block list.",
+          "description": "Specify the ID of hashes block list.",
+          "tooltip": "Specify the ID of hashes block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -489,8 +489,8 @@
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident Id.",
-          "tooltip": "Specify the incident Id.",
+          "description": "Specify the incident ID.",
+          "tooltip": "Specify the incident ID.",
           "required": true,
           "editable": true,
           "visible": true
@@ -530,8 +530,8 @@
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident Id.",
-          "tooltip": "Specify the incident Id.",
+          "description": "Specify the incident ID.",
+          "tooltip": "Specify the incident ID.",
           "required": true,
           "editable": true,
           "visible": true

@@ -1,6 +1,7 @@
 ## About the connector
 Proofpoint Threat Response is a solution designed to help organizations manage and respond to cybersecurity threats. It provides tools and features to identify, investigate, and remediate security incidents.
 <p>This document provides information about the Proofpoint Threat Response Connector, which facilitates automated interactions, with a Proofpoint Threat Response server using FortiSOAR&trade; playbooks. Add the Proofpoint Threat Response Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Proofpoint Threat Response.</p>
+
 ### Version information
 
 Connector Version: 1.0.0
@@ -34,7 +35,7 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 </tbody></table>
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations:
-<table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get List of Indicators</td><td>Retrieves all indicators from the specified list.</td><td>get_list <br/>Investigation</td></tr>
+<table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Indicators List</td><td>Retrieves all indicators from the specified list.</td><td>get_list <br/>Investigation</td></tr>
 <tr><td>Add Indicators</td><td>Add indicators to the specified list.</td><td>add_to_list <br/>Investigation</td></tr>
 <tr><td>Block IP Addresses</td><td>Block the supplied IP Addresses in to the specified IP Addresses block list.</td><td>block_ip <br/>Containment</td></tr>
 <tr><td>Block Domain</td><td>Block the supplied domains to the specified domains block list.</td><td>block_domain <br/>Containment</td></tr>
@@ -51,7 +52,7 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Close Incident</td><td>Close an incident in Proofpoint Threat Response based on the input parameters you have specified.</td><td>close_incident <br/>Investigation</td></tr>
 <tr><td>Verify Quarantine</td><td>Verify if an email has been quarantined.</td><td>verify_quarantine <br/>Investigation</td></tr>
 </tbody></table>
-### operation: Get List of Indicators
+### operation: Get Indicators List
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>List ID</td><td>Specify the ID of list to fetch the details.
 </td></tr></tbody></table>
@@ -71,7 +72,7 @@ The following automated operations can be included in playbooks and you can also
 ### operation: Block IP Addresses
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>IP Address</td><td>Specify a comma-separated list of IP addresses to add to the block list.
-</td></tr><tr><td>Blacklist ID</td><td>Specify the Id of IP block list.
+</td></tr><tr><td>Blacklist ID</td><td>Specify the ID of IP block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied IP addresses should be removed from the block list.
 </td></tr></tbody></table>
 #### Output
@@ -80,7 +81,7 @@ The following automated operations can be included in playbooks and you can also
 ### operation: Block Domain
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Domain</td><td>Specify a comma-separated list of domains to add to the block list.
-</td></tr><tr><td>Blacklist ID</td><td>Specify the Id of domain block list.
+</td></tr><tr><td>Blacklist ID</td><td>Specify the ID of domain block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied domains should be removed from the block list.
 </td></tr></tbody></table>
 #### Output
@@ -89,7 +90,7 @@ The following automated operations can be included in playbooks and you can also
 ### operation: Block URL
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>URL</td><td>Specify a comma-separated list of URLs to add to the block list.
-</td></tr><tr><td>Blacklist ID</td><td>Specify the Id of URL block list.
+</td></tr><tr><td>Blacklist ID</td><td>Specify the ID of URL block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied URLs should be removed from the block list.
 </td></tr></tbody></table>
 #### Output
@@ -98,7 +99,7 @@ The following automated operations can be included in playbooks and you can also
 ### operation: Block File Hash
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>File Hash</td><td>Specify a comma-separated list of file hashes to add to the file hash block list.
-</td></tr><tr><td>Blacklist ID</td><td>Specify the Id of hashes block list.
+</td></tr><tr><td>Blacklist ID</td><td>Specify the ID of hashes block list.
 </td></tr><tr><td>Expiration</td><td>(Optional) Specify the date and time the supplied file hashes should be removed from the block list.
 </td></tr></tbody></table>
 #### Output
@@ -143,7 +144,7 @@ The following automated operations can be included in playbooks and you can also
  No output schema is available at this time.
 ### operation: Add Comment To Incident
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident Id.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident ID.
 </td></tr><tr><td>Comment</td><td>Specify the comment to add.
 </td></tr><tr><td>Description</td><td>(Optional) Specify the description to add this operation.
 </td></tr></tbody></table>
@@ -152,7 +153,7 @@ The following automated operations can be included in playbooks and you can also
  No output schema is available at this time.
 ### operation: Update Comment To Incident
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident Id.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Incident ID</td><td>Specify the incident ID.
 </td></tr><tr><td>Comment</td><td>(Optional) Specify the comment to update.
 </td></tr><tr><td>Description</td><td>(Optional) Specify the description to add this operation.
 </td></tr></tbody></table>
