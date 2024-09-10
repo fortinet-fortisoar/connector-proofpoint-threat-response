@@ -9,7 +9,7 @@
   "cs_compatible": true,
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-proofpoint-threat-response/blob/release/1.0.0/docs/proofpoint-threat-response.md",
   "configuration": {
     "fields": [
       {
@@ -60,10 +60,10 @@
   "operations": [
     {
       "operation": "get_list",
-      "title": "Get List",
+      "title": "Get Indicators List",
       "category": "investigation",
       "annotation": "get_list",
-      "description": "Gets items for the specified list.",
+      "description": "Retrieves all indicators from the specified list.",
       "output_schema": [],
       "parameters": [
         {
@@ -81,18 +81,18 @@
     },
     {
       "operation": "add_to_list",
-      "title": "Add To List",
+      "title": "Add Indicators",
       "category": "investigation",
       "annotation": "add_to_list",
-      "description": "Adds a member to the specified list.",
+      "description": "Add indicators to the specified list.",
       "output_schema": [],
       "parameters": [
         {
           "name": "list_id",
           "title": "List ID",
           "type": "text",
-          "description": "Specify the ID of list to add provided members.",
-          "tooltip": "Specify the ID of list to add provided members.",
+          "description": "Specify the ID of list to add provided indicators.",
+          "tooltip": "Specify the ID of list to add provided indicators.",
           "required": true,
           "editable": true,
           "visible": true
@@ -121,8 +121,8 @@
           "name": "expiration",
           "title": "Expiration",
           "type": "datetime",
-          "description": "Specify the expiration of the member.",
-          "tooltip": "Specify the expiration of the member.",
+          "description": "Specify the expiration of the indicator.",
+          "tooltip": "Specify the expiration of the indicator.",
           "required": false,
           "editable": true,
           "visible": true
@@ -132,10 +132,10 @@
     },
     {
       "operation": "block_ip",
-      "title": "Block IP",
+      "title": "Block IP Addresses",
       "category": "containment",
       "annotation": "block_ip",
-      "description": "Block the supplied IP Addresses to the specified IP Addresses block list.",
+      "description": "Block the supplied IP Addresses in to the specified IP Addresses block list.",
       "output_schema": [],
       "parameters": [
         {
@@ -152,8 +152,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of IP block list.",
-          "tooltip": "Specify the Id of IP block list.",
+          "description": "Specify the ID of IP block list.",
+          "tooltip": "Specify the ID of IP block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -193,8 +193,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of domain block list.",
-          "tooltip": "Specify the Id of domain block list.",
+          "description": "Specify the ID of domain block list.",
+          "tooltip": "Specify the ID of domain block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -234,8 +234,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of URL block list.",
-          "tooltip": "Specify the Id of URL block list.",
+          "description": "Specify the ID of URL block list.",
+          "tooltip": "Specify the ID of URL block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -275,8 +275,8 @@
           "name": "list_id",
           "title": "Blacklist ID",
           "type": "text",
-          "description": "Specify the Id of hashes block list.",
-          "tooltip": "Specify the Id of hashes block list.",
+          "description": "Specify the ID of hashes block list.",
+          "tooltip": "Specify the ID of hashes block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -299,7 +299,7 @@
       "title": "Search Indicator",
       "category": "investigation",
       "annotation": "search_indicator",
-      "description": "Get the indicators from the specified list, according to the defined filter.",
+      "description": "Retrieves the indicators from the specified list, according to the defined filter.",
       "output_schema": [],
       "parameters": [
         {
@@ -359,7 +359,7 @@
     },
     {
       "operation": "get_incident",
-      "title": "Get Incident",
+      "title": "Get Incident By ID",
       "category": "investigation",
       "annotation": "get_incident",
       "description": "Get incident metadata from Threat Response.",
@@ -379,8 +379,8 @@
           "name": "expand_events",
           "title": "Expand Events",
           "type": "checkbox",
-          "description": "If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
-          "tooltip": "If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "description": "Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "tooltip": "Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
           "required": true,
           "editable": true,
           "visible": true
@@ -390,7 +390,7 @@
     },
     {
       "operation": "get_incidents",
-      "title": "Get Incidents",
+      "title": "Get Incidents List",
       "category": "investigation",
       "annotation": "get_incidents",
       "description": "Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.",
@@ -489,8 +489,8 @@
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident Id for add comment into.",
-          "tooltip": "Specify the incident Id for add comment into.",
+          "description": "Specify the incident ID.",
+          "tooltip": "Specify the incident ID.",
           "required": true,
           "editable": true,
           "visible": true
@@ -530,8 +530,8 @@
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident Id for update comment into.",
-          "tooltip": "Specify the incident Id for update comment into.",
+          "description": "Specify the incident ID.",
+          "tooltip": "Specify the incident ID.",
           "required": true,
           "editable": true,
           "visible": true
@@ -571,8 +571,8 @@
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident ID value of the incident to add the user to.",
-          "tooltip": "Specify the incident ID value of the incident to add the user to.",
+          "description": "Specify the incident ID.",
+          "tooltip": "Specify the incident ID.",
           "required": true,
           "editable": true,
           "visible": true
@@ -581,8 +581,8 @@
           "name": "targets",
           "title": "Targets",
           "type": "text",
-          "description": "Specify the list of Targets to add to the incident.",
-          "tooltip": "Specify the list of Targets to add to the incident.",
+          "description": "Specify the list of targets to add to the incident.",
+          "tooltip": "Specify the list of targets to add to the incident.",
           "required": true,
           "editable": true,
           "visible": true
@@ -591,8 +591,8 @@
           "name": "attackers",
           "title": "Attackers",
           "type": "text",
-          "description": "Specify the list of Attackers to add to the incident.",
-          "tooltip": "Specify the list of Attackers to add to the incident.",
+          "description": "Specify the list of attackers to add to the incident.",
+          "tooltip": "Specify the list of attackers to add to the incident.",
           "required": true,
           "editable": true,
           "visible": true
@@ -645,7 +645,7 @@
           "type": "select",
           "description": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
           "tooltip": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
-          "select": [
+          "options": [
             "Malware",
             "Policy Violation",
             "Vulnerability",
@@ -708,8 +708,8 @@
           "name": "link_attribute",
           "title": "Link Attribute",
           "type": "select",
-          "description": "Specify the attribute to link alerts to.",
-          "tooltip": "Specify the attribute to link alerts to.",
+          "description": "Specify the attribute to link to the alerts.",
+          "tooltip": "Specify the attribute to link to the alerts.",
           "options": [
             "Target IP Address",
             "Target Hostname",
