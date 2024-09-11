@@ -233,17 +233,17 @@ Note: Every item of the "forensics_hosts" list is in JSON format. For more infor
 The `Sample - proofpoint-threat-response - 1.0.0` playbook collection comes bundled with the Proofpoint Threat Response connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Proofpoint Threat Response connector.
 
 - Add Comment To Incident
-- Add To List
+- Add Indicators
 - Add User To Incident
 - Block Domain
 - Block File Hash
-- Block IP
+- Block IP Addresses
 - Block URL
 - Close Incident
 - Delete Indicator
-- Get Incident
-- Get Incidents
-- Get List
+- Get Incident By ID
+- Get Incidents List
+- Get Indicators List
 - Ingest Alert
 - Search Indicator
 - Update Comment To Incident
