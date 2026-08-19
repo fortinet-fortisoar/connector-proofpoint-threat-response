@@ -1,7 +1,9 @@
-""" Copyright start
-  MIT License
-  Copyright (c) 2024 Fortinet Inc
-  Copyright end """
+"""
+Copyright start
+MIT License
+Copyright (c) 2026 Fortinet Inc
+Copyright end
+"""
 
 import datetime
 import json
@@ -10,7 +12,7 @@ import requests
 from connectors.core.connector import ConnectorError, get_logger
 from requests.auth import HTTPBasicAuth
 
-from const import STATE, CLASSIFICATION, LINK_ATTRIBUTE, SEVERITY
+from .const import STATE, CLASSIFICATION, LINK_ATTRIBUTE, SEVERITY
 
 logger = get_logger('proofpoint-threat-response')
 

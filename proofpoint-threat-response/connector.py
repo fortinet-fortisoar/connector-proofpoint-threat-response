@@ -1,7 +1,9 @@
-""" Copyright start
-  MIT License
-  Copyright (c) 2024 Fortinet Inc
-  Copyright end """
+"""
+Copyright start
+MIT License
+Copyright (c) 2026 Fortinet Inc
+Copyright end
+"""
 
 
 from connectors.core.connector import Connector, ConnectorError, get_logger

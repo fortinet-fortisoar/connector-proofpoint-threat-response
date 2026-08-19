@@ -4,12 +4,18 @@ Proofpoint Threat Response is a solution designed to help organizations manage a
 
 ### Version information
 
-Connector Version: 1.0.0
+Connector Version: 1.0.1
 
+Publisher: Fortinet
 
-Authored By: Fortinet
+Contributor: Ishwari Dubewar
 
 Certified: No
+
+### Release Notes for version 1.0.1
+The following enhancements have been made to the Proofpoint Threat Response connector in version 1.0.1:
+- Resolved an issue that caused the connector health check to fail.
+
 ## Installing the connector
 <p>Use the <strong>Content Hub</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.</p><p>You can also use the <code>yum</code> command as a root user to install the connector:</p>
 <pre>yum install cyops-connector-proofpoint-threat-response</pre>
@@ -230,7 +236,7 @@ Note: Every item of the "forensics_hosts" list is in JSON format. For more infor
 
  No output schema is available at this time.
 ## Included playbooks
-The `Sample - proofpoint-threat-response - 1.0.0` playbook collection comes bundled with the Proofpoint Threat Response connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Proofpoint Threat Response connector.
+The `Sample - proofpoint-threat-response - 1.0.1` playbook collection comes bundled with the Proofpoint Threat Response connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Proofpoint Threat Response connector.
 
 - Add Comment To Incident
 - Add Indicators

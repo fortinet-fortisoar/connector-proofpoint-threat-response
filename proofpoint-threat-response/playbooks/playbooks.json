@@ -48,7 +48,7 @@
                 "params": {
                   "list_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "get_list",
                 "operationTitle": "Get Indicators List",
@@ -133,7 +133,7 @@
                   "description": "",
                   "expiration": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "add_to_list",
                 "operationTitle": "Add Indicators",
@@ -217,7 +217,7 @@
                   "list_id": "",
                   "expiration": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "block_ip",
                 "operationTitle": "Block IP Addresses",
@@ -301,7 +301,7 @@
                   "list_id": "",
                   "expiration": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "block_domain",
                 "operationTitle": "Block Domain",
@@ -385,7 +385,7 @@
                   "list_id": "",
                   "expiration": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "block_url",
                 "operationTitle": "Block URL",
@@ -469,7 +469,7 @@
                   "list_id": "",
                   "expiration": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "block_hash",
                 "operationTitle": "Block File Hash",
@@ -552,7 +552,7 @@
                   "filter": "",
                   "list_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "search_indicator",
                 "operationTitle": "Search Indicator",
@@ -635,7 +635,7 @@
                   "list_id": "",
                   "indicator_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "delete_indicator",
                 "operationTitle": "Delete Indicator",
@@ -718,7 +718,7 @@
                   "incident_id": "",
                   "expand_events": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "get_incident",
                 "operationTitle": "Get Incident By ID",
@@ -806,7 +806,7 @@
                   "expand_events": "",
                   "limit": 50
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "get_incidents",
                 "operationTitle": "Get Incidents List",
@@ -890,7 +890,7 @@
                   "comment": "",
                   "description": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "add_comment_to_incident",
                 "operationTitle": "Add Comment To Incident",
@@ -974,7 +974,7 @@
                   "comment": "",
                   "description": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "update_comment_to_incident",
                 "operationTitle": "Update Comment To Incident",
@@ -1058,7 +1058,7 @@
                   "targets": "",
                   "attackers": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "add_user_to_incident",
                 "operationTitle": "Add User To Incident",
@@ -1153,7 +1153,7 @@
                   "threat_info": "",
                   "custom_fields": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "ingest_alert",
                 "operationTitle": "Ingest Alert",
@@ -1237,7 +1237,7 @@
                   "comment": "",
                   "description": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "close_incident",
                 "operationTitle": "Close Incident",
@@ -1321,7 +1321,7 @@
                   "time": "",
                   "recipient": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
                 "operation": "verify_quarantine",
                 "operationTitle": "Verify Quarantine",
@@ -1361,7 +1361,7 @@
           ]
         }
       ],
-      "name": "Sample - Proofpoint Threat Response - 1.0.0",
+      "name": "Sample - Proofpoint Threat Response - 1.0.1",
       "description": "Proofpoint Threat Response is a solution designed to help organizations manage and respond to cybersecurity threats. It provides tools and features to identify, investigate, and remediate security incidents.",
       "visible": true,
       "recordTags": [
