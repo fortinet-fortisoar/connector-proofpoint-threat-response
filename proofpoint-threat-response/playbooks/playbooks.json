@@ -2,718 +2,45 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "4ddce2a3-ee59-47d4-8703-2235e15ccebe",
       "@type": "WorkflowCollection",
+      "name": "Sample - Proofpoint Threat Response - 1.0.1",
+      "description": "Proofpoint Threat Response is a solution designed to help organizations manage and respond to cybersecurity threats. It provides tools and features to identify, investigate, and remediate security incidents.",
+      "visible": true,
+      "image": null,
+      "uuid": "4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+      "id": 273,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Proofpoint",
+        "proofpoint-threat-response"
+      ],
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "319c2983-f0e3-4120-bf6c-cd43b7c6a4cd",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "22ec4541-f4ed-4b0c-8c56-b335e9f67387",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "3b2a2289-5496-4aad-8f57-836bf573ae68",
-                "title": "Proofpoint Threat Response: Get Indicators List",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "a4bd2d71-32f2-4c63-a9e5-6f98f8d3153a",
-              "@type": "WorkflowStep",
-              "name": "Get Indicators List",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "list_id": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "get_list",
-                "operationTitle": "Get Indicators List",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
           "triggerLimit": null,
-          "description": "Retrieves all indicators from the specified list.",
-          "name": "Get Indicators List",
+          "name": "Get Incident By ID",
+          "aliasName": null,
           "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
+          "description": "Retrieves the metadata of the specified incident from Proofpoint Threat Response.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/22ec4541-f4ed-4b0c-8c56-b335e9f67387",
-          "routes": [
-            {
-              "uuid": "182b5aae-fa39-41a3-a533-3643528b65a4",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Get Indicators List",
-              "sourceStep": "/api/3/workflow_steps/22ec4541-f4ed-4b0c-8c56-b335e9f67387",
-              "targetStep": "/api/3/workflow_steps/a4bd2d71-32f2-4c63-a9e5-6f98f8d3153a"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "85dae029-ef71-429f-8120-26a977f449be",
+          "lastModifyDate": 1787560939,
           "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4ecca962-18bb-4133-9556-870b22c118fb",
           "steps": [
             {
-              "uuid": "1bbbbb76-2497-4d65-bab3-d0246eb2a7b5",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "d9f3f790-1ff0-4b19-9345-4968f196de4f",
-                "title": "Proofpoint Threat Response: Add Indicators",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "fa869d0f-b177-4c29-9945-dfedf7152f44",
-              "@type": "WorkflowStep",
-              "name": "Add Indicators",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "list_id": "",
-                  "indicator": "",
-                  "description": "",
-                  "expiration": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "add_to_list",
-                "operationTitle": "Add Indicators",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Add indicators to the specified list.",
-          "name": "Add Indicators",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/1bbbbb76-2497-4d65-bab3-d0246eb2a7b5",
-          "routes": [
-            {
-              "uuid": "b4f44370-8fce-4f17-bd7e-a7a9e643f283",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Add Indicators",
-              "sourceStep": "/api/3/workflow_steps/1bbbbb76-2497-4d65-bab3-d0246eb2a7b5",
-              "targetStep": "/api/3/workflow_steps/fa869d0f-b177-4c29-9945-dfedf7152f44"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "f94c2924-f351-44a8-8db4-ba19a1db4358",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "2efa49ad-c435-4a00-abc8-3df3d93cc7a3",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "281aac7b-deb0-4b76-bdb4-096b790b7325",
-                "title": "Proofpoint Threat Response: Block IP Addresses",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "7852f7ef-f3e5-481e-97f4-db1bf0b4eb7a",
-              "@type": "WorkflowStep",
-              "name": "Block IP Addresses",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "indicator": "",
-                  "list_id": "",
-                  "expiration": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "block_ip",
-                "operationTitle": "Block IP Addresses",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Block the supplied IP Addresses in to the specified IP Addresses block list.",
-          "name": "Block IP Addresses",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2efa49ad-c435-4a00-abc8-3df3d93cc7a3",
-          "routes": [
-            {
-              "uuid": "e404fc91-cc1e-4ff2-b2b6-beb20970c3a1",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Block IP Addresses",
-              "sourceStep": "/api/3/workflow_steps/2efa49ad-c435-4a00-abc8-3df3d93cc7a3",
-              "targetStep": "/api/3/workflow_steps/7852f7ef-f3e5-481e-97f4-db1bf0b4eb7a"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "e3b39aea-6db9-4611-baf3-9b9a907efa12",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "93dda240-0831-48fd-a99c-bb4308ddf5ba",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "1e35c077-8327-47a5-934d-b09415054ac5",
-                "title": "Proofpoint Threat Response: Block Domain",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "a8fba5e1-98f6-49b2-821f-6a8c0833b892",
-              "@type": "WorkflowStep",
-              "name": "Block Domain",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "indicator": "",
-                  "list_id": "",
-                  "expiration": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "block_domain",
-                "operationTitle": "Block Domain",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Block the supplied domains to the specified domains block list.",
-          "name": "Block Domain",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/93dda240-0831-48fd-a99c-bb4308ddf5ba",
-          "routes": [
-            {
-              "uuid": "d4c9700a-f195-4e20-a7b4-3b20db1e0617",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Block Domain",
-              "sourceStep": "/api/3/workflow_steps/93dda240-0831-48fd-a99c-bb4308ddf5ba",
-              "targetStep": "/api/3/workflow_steps/a8fba5e1-98f6-49b2-821f-6a8c0833b892"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "8dfdbda6-b116-4296-a53b-fcfc26ff6e61",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "50ccee57-e15f-4ca7-8d0f-47461c153153",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "ea13c96c-b3e8-4010-9a95-5abd832fe943",
-                "title": "Proofpoint Threat Response: Block URL",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "a97dbf22-8d5d-496f-be9b-c539f143374d",
-              "@type": "WorkflowStep",
-              "name": "Block URL",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "indicator": "",
-                  "list_id": "",
-                  "expiration": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "block_url",
-                "operationTitle": "Block URL",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Block the supplied URLs to the specified URLs block list.",
-          "name": "Block URL",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/50ccee57-e15f-4ca7-8d0f-47461c153153",
-          "routes": [
-            {
-              "uuid": "3c18fe84-8463-4a4f-a230-24e6c88ec0ee",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Block URL",
-              "sourceStep": "/api/3/workflow_steps/50ccee57-e15f-4ca7-8d0f-47461c153153",
-              "targetStep": "/api/3/workflow_steps/a97dbf22-8d5d-496f-be9b-c539f143374d"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "b003091a-3054-4c6f-9ec1-fe11fe09c141",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "8fb2ea57-f608-45f1-aee8-3dee2ea26db2",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "24e179f6-c29a-400d-a690-40d26d6eb768",
-                "title": "Proofpoint Threat Response: Block File Hash",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "2ceefadd-b80e-4407-9e77-5b4482a6b039",
-              "@type": "WorkflowStep",
-              "name": "Block File Hash",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "indicator": "",
-                  "list_id": "",
-                  "expiration": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "block_hash",
-                "operationTitle": "Block File Hash",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Block the supplied file hashes to the specified file hash block list.",
-          "name": "Block File Hash",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8fb2ea57-f608-45f1-aee8-3dee2ea26db2",
-          "routes": [
-            {
-              "uuid": "83ee396b-38eb-440c-b81f-bc27d32c8b8f",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Block File Hash",
-              "sourceStep": "/api/3/workflow_steps/8fb2ea57-f608-45f1-aee8-3dee2ea26db2",
-              "targetStep": "/api/3/workflow_steps/2ceefadd-b80e-4407-9e77-5b4482a6b039"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "bfc319eb-fecd-40a9-b203-1014bb48d75b",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "4c724c75-bbf3-4143-9f7a-414f439931f5",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "e2ad1949-ce16-41e4-b6f6-ee7c5e86b8d3",
-                "title": "Proofpoint Threat Response: Search Indicator",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "776f7bd4-49d6-40e5-ae32-53a690eb178c",
-              "@type": "WorkflowStep",
-              "name": "Search Indicator",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "filter": "",
-                  "list_id": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "search_indicator",
-                "operationTitle": "Search Indicator",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Retrieves the indicators from the specified list, according to the defined filter.",
-          "name": "Search Indicator",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/4c724c75-bbf3-4143-9f7a-414f439931f5",
-          "routes": [
-            {
-              "uuid": "2e5e9028-8078-4834-8dff-5c5dc7a36d76",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Search Indicator",
-              "sourceStep": "/api/3/workflow_steps/4c724c75-bbf3-4143-9f7a-414f439931f5",
-              "targetStep": "/api/3/workflow_steps/776f7bd4-49d6-40e5-ae32-53a690eb178c"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "77f34914-6217-4122-ba9e-9ce6c0f6160a",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "8833b5d7-f9a8-4a53-ac2e-483384499877",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "3dfa79f5-a6e4-4787-ba2b-b78afeb59d8e",
-                "title": "Proofpoint Threat Response: Delete Indicator",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "0831cdf2-c640-4eb5-88ce-e303db9f2389",
-              "@type": "WorkflowStep",
-              "name": "Delete Indicator",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "list_id": "",
-                  "indicator_id": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "delete_indicator",
-                "operationTitle": "Delete Indicator",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Removes an indicator from Proofpoint Threat Response based on the input parameters.",
-          "name": "Delete Indicator",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8833b5d7-f9a8-4a53-ac2e-483384499877",
-          "routes": [
-            {
-              "uuid": "92be2d21-731b-406f-9335-3e0d735b8643",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Delete Indicator",
-              "sourceStep": "/api/3/workflow_steps/8833b5d7-f9a8-4a53-ac2e-483384499877",
-              "targetStep": "/api/3/workflow_steps/0831cdf2-c640-4eb5-88ce-e303db9f2389"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "19f5f59a-41da-4d82-83f8-1d9c150eac75",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "4ecca962-18bb-4133-9556-870b22c118fb",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "route": "3eb677a3-d323-472b-8b27-31dcba16bfd4",
-                "title": "Proofpoint Threat Response: Get Incident By ID",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "b6d2ca51-0c90-4ddb-bd0a-204f473dc6bd",
               "@type": "WorkflowStep",
               "name": "Get Incident By ID",
               "description": null,
-              "status": null,
               "arguments": {
                 "name": "Proofpoint Threat Response",
-                "config": "''",
+                "config": "",
                 "params": {
                   "incident_id": "",
                   "expand_events": ""
@@ -726,51 +53,118 @@
                   "output_data": "{{vars.result}}"
                 }
               },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b6d2ca51-0c90-4ddb-bd0a-204f473dc6bd"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "3eb677a3-d323-472b-8b27-31dcba16bfd4",
+                "title": "Proofpoint Threat Response: Get Incident By ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "4ecca962-18bb-4133-9556-870b22c118fb"
             }
           ],
-          "triggerLimit": null,
-          "description": "Get incident metadata from Threat Response.",
-          "name": "Get Incident By ID",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/4ecca962-18bb-4133-9556-870b22c118fb",
           "routes": [
             {
-              "uuid": "9c695b0b-d151-4fe5-bae9-f73eee829978",
               "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
               "name": "Start-> Get Incident By ID",
+              "targetStep": "/api/3/workflow_steps/b6d2ca51-0c90-4ddb-bd0a-204f473dc6bd",
               "sourceStep": "/api/3/workflow_steps/4ecca962-18bb-4133-9556-870b22c118fb",
-              "targetStep": "/api/3/workflow_steps/b6d2ca51-0c90-4ddb-bd0a-204f473dc6bd"
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "9c695b0b-d151-4fe5-bae9-f73eee829978"
             }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "19f5f59a-41da-4d82-83f8-1d9c150eac75",
+          "id": 4322,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ce776c30-a6ff-4aba-b274-06e8a274b755",
+          "triggerLimit": null,
+          "name": "Get Indicators List",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Retrieves all indicators from the specified list.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787561085,
           "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/22ec4541-f4ed-4b0c-8c56-b335e9f67387",
           "steps": [
             {
-              "uuid": "138d4f13-1a7d-43d0-a8b2-82704c0de350",
+              "@type": "WorkflowStep",
+              "name": "Get Indicators List",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "get_list",
+                "operationTitle": "Get Indicators List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "a4bd2d71-32f2-4c63-a9e5-6f98f8d3153a"
+            },
+            {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
-              "status": null,
               "arguments": {
-                "route": "12440517-6f00-41ad-ab2a-8701adecb03b",
-                "title": "Proofpoint Threat Response: Get Incidents List",
+                "route": "3b2a2289-5496-4aad-8f57-836bf573ae68",
+                "title": "Proofpoint Threat Response: Get Indicators List",
                 "resources": [
                   "alerts"
                 ],
@@ -780,250 +174,94 @@
                     "records": "{{vars.input.records[0]}}"
                   }
                 },
-                "singleRecordExecution": false,
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
-                "executeButtonText": "Execute"
+                "singleRecordExecution": false
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "dca9c5f7-f4e6-4cb9-80f1-a252bd12f90e",
-              "@type": "WorkflowStep",
-              "name": "Get Incidents List",
-              "description": null,
               "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "state": "",
-                  "created_after": "",
-                  "created_before": "",
-                  "closed_after": "",
-                  "closed_before": "",
-                  "expand_events": "",
-                  "limit": 50
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "get_incidents",
-                "operationTitle": "Get Incidents List",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "22ec4541-f4ed-4b0c-8c56-b335e9f67387"
             }
           ],
-          "triggerLimit": null,
-          "description": "Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.",
-          "name": "Get Incidents List",
-          "tag": "#Proofpoint Threat Response",
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Indicators List",
+              "targetStep": "/api/3/workflow_steps/a4bd2d71-32f2-4c63-a9e5-6f98f8d3153a",
+              "sourceStep": "/api/3/workflow_steps/22ec4541-f4ed-4b0c-8c56-b335e9f67387",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "182b5aae-fa39-41a3-a533-3643528b65a4"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "319c2983-f0e3-4120-bf6c-cd43b7c6a4cd",
+          "id": 4314,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Proofpoint",
             "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/138d4f13-1a7d-43d0-a8b2-82704c0de350",
-          "routes": [
-            {
-              "uuid": "e8e3040a-549a-49f5-b11d-b35c03a4286c",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Get Incidents List",
-              "sourceStep": "/api/3/workflow_steps/138d4f13-1a7d-43d0-a8b2-82704c0de350",
-              "targetStep": "/api/3/workflow_steps/dca9c5f7-f4e6-4cb9-80f1-a252bd12f90e"
-            }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "7c321108-354e-453b-bf31-65d37f31e88e",
+          "triggerLimit": null,
+          "name": "Add User To Incident",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Assigns a user to the specified incident, as either a target or an attacker.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560863,
           "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/68535197-2ea1-4b0b-b416-1b209adbe6b8",
           "steps": [
             {
-              "uuid": "e46750af-c993-4fb2-8ca8-a2f2a13e824a",
               "@type": "WorkflowStep",
-              "name": "Start",
+              "name": "Add User To Incident",
               "description": null,
-              "status": null,
-              "arguments": {
-                "route": "6a2693a7-0a5e-4300-a7aa-d6801ca02de3",
-                "title": "Proofpoint Threat Response: Add Comment To Incident",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "d0652434-bc2d-42a5-be43-4ed7dacfc4af",
-              "@type": "WorkflowStep",
-              "name": "Add Comment To Incident",
-              "description": null,
-              "status": null,
               "arguments": {
                 "name": "Proofpoint Threat Response",
-                "config": "''",
+                "config": "",
                 "params": {
-                  "incident_id": "",
-                  "comment": "",
-                  "description": ""
+                  "targets": "",
+                  "attackers": "",
+                  "incident_id": ""
                 },
                 "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
-                "operation": "add_comment_to_incident",
-                "operationTitle": "Add Comment To Incident",
+                "operation": "add_user_to_incident",
+                "operationTitle": "Add User To Incident",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
               },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Adds comments to an existing Threat Response incident, by incident ID.",
-          "name": "Add Comment To Incident",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e46750af-c993-4fb2-8ca8-a2f2a13e824a",
-          "routes": [
-            {
-              "uuid": "dc6efc0b-bed4-4f6d-8123-0b9d1c985251",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Add Comment To Incident",
-              "sourceStep": "/api/3/workflow_steps/e46750af-c993-4fb2-8ca8-a2f2a13e824a",
-              "targetStep": "/api/3/workflow_steps/d0652434-bc2d-42a5-be43-4ed7dacfc4af"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "af47172f-41c7-4ef3-8950-39264ecfd500",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "836f6b45-20a1-4c6e-ab5c-001a875625df",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
               "status": null,
-              "arguments": {
-                "route": "ab0c7140-c230-4023-99b8-efc156f0d2b6",
-                "title": "Proofpoint Threat Response: Update Comment To Incident",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "singleRecordExecution": false,
-                "noRecordExecution": true,
-                "executeButtonText": "Execute"
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "70d54dde-286b-4d3f-9bbd-2d4ff4c974a8"
             },
             {
-              "uuid": "37f9f110-9a0b-4c29-b951-75d28f53a3f3",
-              "@type": "WorkflowStep",
-              "name": "Update Comment To Incident",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "incident_id": "",
-                  "comment": "",
-                  "description": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "update_comment_to_incident",
-                "operationTitle": "Update Comment To Incident",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Update the comments to an existing Threat Response incident, by incident ID.",
-          "name": "Update Comment To Incident",
-          "tag": "#Proofpoint Threat Response",
-          "recordTags": [
-            "Proofpoint",
-            "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/836f6b45-20a1-4c6e-ab5c-001a875625df",
-          "routes": [
-            {
-              "uuid": "87278dcb-8ba2-4559-aa5c-d4fce1164303",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Update Comment To Incident",
-              "sourceStep": "/api/3/workflow_steps/836f6b45-20a1-4c6e-ab5c-001a875625df",
-              "targetStep": "/api/3/workflow_steps/37f9f110-9a0b-4c29-b951-75d28f53a3f3"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "49d93a7c-9dfd-46b3-85aa-261469af1482",
-          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
-          "steps": [
-            {
-              "uuid": "68535197-2ea1-4b0b-b416-1b209adbe6b8",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
-              "status": null,
               "arguments": {
                 "route": "367d7155-4ebd-4e4c-88dc-a8bbd5e7ab64",
                 "title": "Proofpoint Threat Response: Add User To Incident",
@@ -1036,81 +274,96 @@
                     "records": "{{vars.input.records[0]}}"
                   }
                 },
-                "singleRecordExecution": false,
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
-                "executeButtonText": "Execute"
+                "singleRecordExecution": false
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "70d54dde-286b-4d3f-9bbd-2d4ff4c974a8",
-              "@type": "WorkflowStep",
-              "name": "Add User To Incident",
-              "description": null,
               "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "incident_id": "",
-                  "targets": "",
-                  "attackers": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "add_user_to_incident",
-                "operationTitle": "Add User To Incident",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "68535197-2ea1-4b0b-b416-1b209adbe6b8"
             }
           ],
-          "triggerLimit": null,
-          "description": "Assigns a user to an incident as a target or attacker.",
-          "name": "Add User To Incident",
-          "tag": "#Proofpoint Threat Response",
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Add User To Incident",
+              "targetStep": "/api/3/workflow_steps/70d54dde-286b-4d3f-9bbd-2d4ff4c974a8",
+              "sourceStep": "/api/3/workflow_steps/68535197-2ea1-4b0b-b416-1b209adbe6b8",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "e12bcdf2-5a54-4bd6-afc2-1ca98560d7b5"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "49d93a7c-9dfd-46b3-85aa-261469af1482",
+          "id": 4326,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Proofpoint",
             "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/68535197-2ea1-4b0b-b416-1b209adbe6b8",
-          "routes": [
-            {
-              "uuid": "e12bcdf2-5a54-4bd6-afc2-1ca98560d7b5",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Add User To Incident",
-              "sourceStep": "/api/3/workflow_steps/68535197-2ea1-4b0b-b416-1b209adbe6b8",
-              "targetStep": "/api/3/workflow_steps/70d54dde-286b-4d3f-9bbd-2d4ff4c974a8"
-            }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d8543389-a60a-421d-8379-1a416d19c8be",
+          "triggerLimit": null,
+          "name": "Delete Indicator",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Removes an indicator from Proofpoint Threat Response based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560957,
           "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8833b5d7-f9a8-4a53-ac2e-483384499877",
           "steps": [
             {
-              "uuid": "ac585023-5d17-49b8-b862-0448e21a9f1c",
+              "@type": "WorkflowStep",
+              "name": "Delete Indicator",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": "",
+                  "indicator_id": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "delete_indicator",
+                "operationTitle": "Delete Indicator",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "0831cdf2-c640-4eb5-88ce-e303db9f2389"
+            },
+            {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
-              "status": null,
               "arguments": {
-                "route": "0a4eef8f-5065-4c60-aedc-43fe3bb79586",
-                "title": "Proofpoint Threat Response: Ingest Alert",
+                "route": "3dfa79f5-a6e4-4787-ba2b-b78afeb59d8e",
+                "title": "Proofpoint Threat Response: Delete Indicator",
                 "resources": [
                   "alerts"
                 ],
@@ -1120,89 +373,694 @@
                     "records": "{{vars.input.records[0]}}"
                   }
                 },
-                "singleRecordExecution": false,
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
-                "executeButtonText": "Execute"
+                "singleRecordExecution": false
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "e62d4503-59ca-49b6-bea2-a4924045d02b",
-              "@type": "WorkflowStep",
-              "name": "Ingest Alert",
-              "description": null,
               "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "json_version": "2.0",
-                  "post_url_id": "",
-                  "attacker": "",
-                  "classification": "",
-                  "cnc_hosts": "",
-                  "detector": "",
-                  "email": "",
-                  "forensics_hosts": "",
-                  "link_attribute": "",
-                  "severity": "",
-                  "summary": "",
-                  "target": "",
-                  "threat_info": "",
-                  "custom_fields": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "ingest_alert",
-                "operationTitle": "Ingest Alert",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "8833b5d7-f9a8-4a53-ac2e-483384499877"
             }
           ],
-          "triggerLimit": null,
-          "description": "Ingest an alert into Threat Response.",
-          "name": "Ingest Alert",
-          "tag": "#Proofpoint Threat Response",
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Delete Indicator",
+              "targetStep": "/api/3/workflow_steps/0831cdf2-c640-4eb5-88ce-e303db9f2389",
+              "sourceStep": "/api/3/workflow_steps/8833b5d7-f9a8-4a53-ac2e-483384499877",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "92be2d21-731b-406f-9335-3e0d735b8643"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "77f34914-6217-4122-ba9e-9ce6c0f6160a",
+          "id": 4321,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Proofpoint",
             "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ac585023-5d17-49b8-b862-0448e21a9f1c",
-          "routes": [
-            {
-              "uuid": "d0d3e4c3-9d6c-4985-a8a9-e638d7e3ae7d",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Ingest Alert",
-              "sourceStep": "/api/3/workflow_steps/ac585023-5d17-49b8-b862-0448e21a9f1c",
-              "targetStep": "/api/3/workflow_steps/e62d4503-59ca-49b6-bea2-a4924045d02b"
-            }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "cba76ed0-d64a-403a-8fa3-25e59d533db4",
+          "triggerLimit": null,
+          "name": "Add Comment To Incident",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Adds a comment to an existing incident in Proofpoint Threat Response, based on the incident ID you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560903,
           "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/e46750af-c993-4fb2-8ca8-a2f2a13e824a",
           "steps": [
             {
-              "uuid": "976df6cf-147c-4f2b-ab94-6a92ea301ab9",
+              "@type": "WorkflowStep",
+              "name": "Add Comment To Incident",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "comment": "",
+                  "description": "",
+                  "incident_id": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "add_comment_to_incident",
+                "operationTitle": "Add Comment To Incident",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d0652434-bc2d-42a5-be43-4ed7dacfc4af"
+            },
+            {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
+              "arguments": {
+                "route": "6a2693a7-0a5e-4300-a7aa-d6801ca02de3",
+                "title": "Proofpoint Threat Response: Add Comment To Incident",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
               "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "e46750af-c993-4fb2-8ca8-a2f2a13e824a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Add Comment To Incident",
+              "targetStep": "/api/3/workflow_steps/d0652434-bc2d-42a5-be43-4ed7dacfc4af",
+              "sourceStep": "/api/3/workflow_steps/e46750af-c993-4fb2-8ca8-a2f2a13e824a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "dc6efc0b-bed4-4f6d-8123-0b9d1c985251"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "7c321108-354e-453b-bf31-65d37f31e88e",
+          "id": 4324,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add Indicators",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Adds the specified indicators to the specified list.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787561066,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1bbbbb76-2497-4d65-bab3-d0246eb2a7b5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Indicators",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": "",
+                  "indicator": "",
+                  "expiration": "",
+                  "description": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "add_to_list",
+                "operationTitle": "Add Indicators",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "fa869d0f-b177-4c29-9945-dfedf7152f44"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "d9f3f790-1ff0-4b19-9345-4968f196de4f",
+                "title": "Proofpoint Threat Response: Add Indicators",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "1bbbbb76-2497-4d65-bab3-d0246eb2a7b5"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Add Indicators",
+              "targetStep": "/api/3/workflow_steps/fa869d0f-b177-4c29-9945-dfedf7152f44",
+              "sourceStep": "/api/3/workflow_steps/1bbbbb76-2497-4d65-bab3-d0246eb2a7b5",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b4f44370-8fce-4f17-bd7e-a7a9e643f283"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "85dae029-ef71-429f-8120-26a977f449be",
+          "id": 4315,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Block URL",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Blocks the specified URLs by adding them to the specified URL block list.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787561012,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/50ccee57-e15f-4ca7-8d0f-47461c153153",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Block URL",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": "",
+                  "indicator": "",
+                  "expiration": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "block_url",
+                "operationTitle": "Block URL",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "a97dbf22-8d5d-496f-be9b-c539f143374d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ea13c96c-b3e8-4010-9a95-5abd832fe943",
+                "title": "Proofpoint Threat Response: Block URL",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "50ccee57-e15f-4ca7-8d0f-47461c153153"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Block URL",
+              "targetStep": "/api/3/workflow_steps/a97dbf22-8d5d-496f-be9b-c539f143374d",
+              "sourceStep": "/api/3/workflow_steps/50ccee57-e15f-4ca7-8d0f-47461c153153",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "3c18fe84-8463-4a4f-a230-24e6c88ec0ee"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "8dfdbda6-b116-4296-a53b-fcfc26ff6e61",
+          "id": 4318,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Comment To Incident",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Updates a comment on an existing incident in Proofpoint Threat Response, based on the incident ID you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560884,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/836f6b45-20a1-4c6e-ab5c-001a875625df",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ab0c7140-c230-4023-99b8-efc156f0d2b6",
+                "title": "Proofpoint Threat Response: Update Comment To Incident",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "836f6b45-20a1-4c6e-ab5c-001a875625df"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Comment To Incident",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "comment": "",
+                  "description": "",
+                  "incident_id": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "update_comment_to_incident",
+                "operationTitle": "Update Comment To Incident",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "37f9f110-9a0b-4c29-b951-75d28f53a3f3"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Update Comment To Incident",
+              "targetStep": "/api/3/workflow_steps/37f9f110-9a0b-4c29-b951-75d28f53a3f3",
+              "sourceStep": "/api/3/workflow_steps/836f6b45-20a1-4c6e-ab5c-001a875625df",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "87278dcb-8ba2-4559-aa5c-d4fce1164303"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "af47172f-41c7-4ef3-8950-39264ecfd500",
+          "id": 4325,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Block File Hash",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Blocks the specified file hashes by adding them to the specified file hash block list.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560995,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8fb2ea57-f608-45f1-aee8-3dee2ea26db2",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Block File Hash",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": "",
+                  "indicator": "",
+                  "expiration": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "block_hash",
+                "operationTitle": "Block File Hash",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "2ceefadd-b80e-4407-9e77-5b4482a6b039"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "24e179f6-c29a-400d-a690-40d26d6eb768",
+                "title": "Proofpoint Threat Response: Block File Hash",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "8fb2ea57-f608-45f1-aee8-3dee2ea26db2"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Block File Hash",
+              "targetStep": "/api/3/workflow_steps/2ceefadd-b80e-4407-9e77-5b4482a6b039",
+              "sourceStep": "/api/3/workflow_steps/8fb2ea57-f608-45f1-aee8-3dee2ea26db2",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "83ee396b-38eb-440c-b81f-bc27d32c8b8f"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "b003091a-3054-4c6f-9ec1-fe11fe09c141",
+          "id": 4319,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search Indicator",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Retrieves indicators from the specified list, based on the filter you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560973,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4c724c75-bbf3-4143-9f7a-414f439931f5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Search Indicator",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "filter": "",
+                  "list_id": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "search_indicator",
+                "operationTitle": "Search Indicator",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "776f7bd4-49d6-40e5-ae32-53a690eb178c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e2ad1949-ce16-41e4-b6f6-ee7c5e86b8d3",
+                "title": "Proofpoint Threat Response: Search Indicator",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "4c724c75-bbf3-4143-9f7a-414f439931f5"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Search Indicator",
+              "targetStep": "/api/3/workflow_steps/776f7bd4-49d6-40e5-ae32-53a690eb178c",
+              "sourceStep": "/api/3/workflow_steps/4c724c75-bbf3-4143-9f7a-414f439931f5",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "2e5e9028-8078-4834-8dff-5c5dc7a36d76"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "bfc319eb-fecd-40a9-b203-1014bb48d75b",
+          "id": 4320,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Close Incident",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Closes an incident in Proofpoint Threat Response based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560816,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/976df6cf-147c-4f2b-ab94-6a92ea301ab9",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Close Incident",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "comment": "",
+                  "description": "",
+                  "incident_id": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "close_incident",
+                "operationTitle": "Close Incident",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "60f5e358-352d-4dc8-953d-21ed8ae784d3"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
               "arguments": {
                 "route": "b10dc2ee-bb50-4a3e-b5a9-1dc37fd6e934",
                 "title": "Proofpoint Threat Response: Close Incident",
@@ -1215,78 +1073,382 @@
                     "records": "{{vars.input.records[0]}}"
                   }
                 },
-                "singleRecordExecution": false,
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
-                "executeButtonText": "Execute"
+                "singleRecordExecution": false
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
-            },
-            {
-              "uuid": "60f5e358-352d-4dc8-953d-21ed8ae784d3",
-              "@type": "WorkflowStep",
-              "name": "Close Incident",
-              "description": null,
               "status": null,
-              "arguments": {
-                "name": "Proofpoint Threat Response",
-                "config": "''",
-                "params": {
-                  "incident_id": "",
-                  "comment": "",
-                  "description": ""
-                },
-                "version": "1.0.1",
-                "connector": "proofpoint-threat-response",
-                "operation": "close_incident",
-                "operationTitle": "Close Incident",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "976df6cf-147c-4f2b-ab94-6a92ea301ab9"
             }
           ],
-          "triggerLimit": null,
-          "description": "Close an incident in Proofpoint Threat Response based on the input parameters you have specified.",
-          "name": "Close Incident",
-          "tag": "#Proofpoint Threat Response",
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Close Incident",
+              "targetStep": "/api/3/workflow_steps/60f5e358-352d-4dc8-953d-21ed8ae784d3",
+              "sourceStep": "/api/3/workflow_steps/976df6cf-147c-4f2b-ab94-6a92ea301ab9",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "7a5fd47e-e671-4800-8a2c-dbca1ba8351f"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "cba76ed0-d64a-403a-8fa3-25e59d533db4",
+          "id": 4328,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Proofpoint",
             "proofpoint-threat-response"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/976df6cf-147c-4f2b-ab94-6a92ea301ab9",
-          "routes": [
-            {
-              "uuid": "7a5fd47e-e671-4800-8a2c-dbca1ba8351f",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Close Incident",
-              "sourceStep": "/api/3/workflow_steps/976df6cf-147c-4f2b-ab94-6a92ea301ab9",
-              "targetStep": "/api/3/workflow_steps/60f5e358-352d-4dc8-953d-21ed8ae784d3"
-            }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f4fd74c3-b802-49d6-9d66-651f8b11bc9e",
+          "triggerLimit": null,
+          "name": "Get Incidents List",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Retrieves metadata for all incidents from Proofpoint Threat Response, based on the filter criteria you have specified, such as the state of the incident or its time of closure.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560916,
           "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/138d4f13-1a7d-43d0-a8b2-82704c0de350",
           "steps": [
             {
-              "uuid": "b60aa245-5942-4fc3-9bda-522e7a61f9aa",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents List",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "limit": 50,
+                  "state": "",
+                  "closed_after": "",
+                  "closed_before": "",
+                  "created_after": "",
+                  "expand_events": "",
+                  "created_before": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "get_incidents",
+                "operationTitle": "Get Incidents List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "dca9c5f7-f4e6-4cb9-80f1-a252bd12f90e"
+            },
+            {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
+              "arguments": {
+                "route": "12440517-6f00-41ad-ab2a-8701adecb03b",
+                "title": "Proofpoint Threat Response: Get Incidents List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
               "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "138d4f13-1a7d-43d0-a8b2-82704c0de350"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Incidents List",
+              "targetStep": "/api/3/workflow_steps/dca9c5f7-f4e6-4cb9-80f1-a252bd12f90e",
+              "sourceStep": "/api/3/workflow_steps/138d4f13-1a7d-43d0-a8b2-82704c0de350",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "e8e3040a-549a-49f5-b11d-b35c03a4286c"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "ce776c30-a6ff-4aba-b274-06e8a274b755",
+          "id": 4323,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Ingest Alert",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Ingests an alert into Proofpoint Threat Response based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560842,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ac585023-5d17-49b8-b862-0448e21a9f1c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Ingest Alert",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "email": "",
+                  "target": "",
+                  "summary": "",
+                  "attacker": "",
+                  "detector": "",
+                  "severity": "",
+                  "cnc_hosts": "",
+                  "post_url_id": "",
+                  "threat_info": "",
+                  "json_version": "2.0",
+                  "custom_fields": "",
+                  "classification": "",
+                  "link_attribute": "",
+                  "forensics_hosts": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "ingest_alert",
+                "operationTitle": "Ingest Alert",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e62d4503-59ca-49b6-bea2-a4924045d02b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "0a4eef8f-5065-4c60-aedc-43fe3bb79586",
+                "title": "Proofpoint Threat Response: Ingest Alert",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ac585023-5d17-49b8-b862-0448e21a9f1c"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Ingest Alert",
+              "targetStep": "/api/3/workflow_steps/e62d4503-59ca-49b6-bea2-a4924045d02b",
+              "sourceStep": "/api/3/workflow_steps/ac585023-5d17-49b8-b862-0448e21a9f1c",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "d0d3e4c3-9d6c-4985-a8a9-e638d7e3ae7d"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "d8543389-a60a-421d-8379-1a416d19c8be",
+          "id": 4327,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Block Domain",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Blocks the specified domains by adding them to the specified domain block list.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787561034,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/93dda240-0831-48fd-a99c-bb4308ddf5ba",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Block Domain",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": "",
+                  "indicator": "",
+                  "expiration": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "block_domain",
+                "operationTitle": "Block Domain",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "a8fba5e1-98f6-49b2-821f-6a8c0833b892"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "1e35c077-8327-47a5-934d-b09415054ac5",
+                "title": "Proofpoint Threat Response: Block Domain",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "93dda240-0831-48fd-a99c-bb4308ddf5ba"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Block Domain",
+              "targetStep": "/api/3/workflow_steps/a8fba5e1-98f6-49b2-821f-6a8c0833b892",
+              "sourceStep": "/api/3/workflow_steps/93dda240-0831-48fd-a99c-bb4308ddf5ba",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "d4c9700a-f195-4e20-a7b4-3b20db1e0617"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "e3b39aea-6db9-4611-baf3-9b9a907efa12",
+          "id": 4317,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Verify Quarantine",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Verifies whether the specified email has been quarantined.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1787560791,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b60aa245-5942-4fc3-9bda-522e7a61f9aa",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
               "arguments": {
                 "route": "ee78e0c0-27cf-4b2f-bf53-60b43b60629a",
                 "title": "Proofpoint Threat Response: Verify Quarantine",
@@ -1299,27 +1461,28 @@
                     "records": "{{vars.input.records[0]}}"
                   }
                 },
-                "singleRecordExecution": false,
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
-                "executeButtonText": "Execute"
+                "singleRecordExecution": false
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b60aa245-5942-4fc3-9bda-522e7a61f9aa"
             },
             {
-              "uuid": "74644c0a-e6d8-44e3-aced-3ff8b4341f48",
               "@type": "WorkflowStep",
               "name": "Verify Quarantine",
               "description": null,
-              "status": null,
               "arguments": {
                 "name": "Proofpoint Threat Response",
-                "config": "''",
+                "config": "",
                 "params": {
-                  "message_id": "",
                   "time": "",
-                  "recipient": ""
+                  "recipient": "",
+                  "message_id": ""
                 },
                 "version": "1.0.1",
                 "connector": "proofpoint-threat-response",
@@ -1329,45 +1492,146 @@
                   "output_data": "{{vars.result}}"
                 }
               },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "74644c0a-e6d8-44e3-aced-3ff8b4341f48"
             }
           ],
-          "triggerLimit": null,
-          "description": "Verify if an email has been quarantined.",
-          "name": "Verify Quarantine",
-          "tag": "#Proofpoint Threat Response",
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Verify Quarantine",
+              "targetStep": "/api/3/workflow_steps/74644c0a-e6d8-44e3-aced-3ff8b4341f48",
+              "sourceStep": "/api/3/workflow_steps/b60aa245-5942-4fc3-9bda-522e7a61f9aa",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "8556c558-854a-4d4e-aa9f-62220927f14b"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "f4fd74c3-b802-49d6-9d66-651f8b11bc9e",
+          "id": 4329,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Proofpoint",
             "proofpoint-threat-response"
-          ],
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Block IP Addresses",
+          "aliasName": null,
+          "tag": "#Proofpoint Threat Response",
+          "description": "Blocks the specified IP addresses by adding them to the specified IP address block list.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b60aa245-5942-4fc3-9bda-522e7a61f9aa",
+          "lastModifyDate": 1787561051,
+          "collection": "/api/3/workflow_collections/4ddce2a3-ee59-47d4-8703-2235e15ccebe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/2efa49ad-c435-4a00-abc8-3df3d93cc7a3",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Block IP Addresses",
+              "description": null,
+              "arguments": {
+                "name": "Proofpoint Threat Response",
+                "config": "",
+                "params": {
+                  "list_id": "",
+                  "indicator": "",
+                  "expiration": ""
+                },
+                "version": "1.0.1",
+                "connector": "proofpoint-threat-response",
+                "operation": "block_ip",
+                "operationTitle": "Block IP Addresses",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "7852f7ef-f3e5-481e-97f4-db1bf0b4eb7a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "281aac7b-deb0-4b76-bdb4-096b790b7325",
+                "title": "Proofpoint Threat Response: Block IP Addresses",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "2efa49ad-c435-4a00-abc8-3df3d93cc7a3"
+            }
+          ],
           "routes": [
             {
-              "uuid": "8556c558-854a-4d4e-aa9f-62220927f14b",
               "@type": "WorkflowRoute",
+              "name": "Start-> Block IP Addresses",
+              "targetStep": "/api/3/workflow_steps/7852f7ef-f3e5-481e-97f4-db1bf0b4eb7a",
+              "sourceStep": "/api/3/workflow_steps/2efa49ad-c435-4a00-abc8-3df3d93cc7a3",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Verify Quarantine",
-              "sourceStep": "/api/3/workflow_steps/b60aa245-5942-4fc3-9bda-522e7a61f9aa",
-              "targetStep": "/api/3/workflow_steps/74644c0a-e6d8-44e3-aced-3ff8b4341f48"
+              "group": null,
+              "uuid": "e404fc91-cc1e-4ff2-b2b6-beb20970c3a1"
             }
+          ],
+          "groups": [],
+          "priority": null,
+          "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+          "isEditable": true,
+          "uuid": "f94c2924-f351-44a8-8db4-ba19a1db4358",
+          "id": 4316,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Proofpoint",
+            "proofpoint-threat-response"
           ]
         }
-      ],
-      "name": "Sample - Proofpoint Threat Response - 1.0.1",
-      "description": "Proofpoint Threat Response is a solution designed to help organizations manage and respond to cybersecurity threats. It provides tools and features to identify, investigate, and remediate security incidents.",
-      "visible": true,
-      "recordTags": [
-        "Proofpoint",
-        "proofpoint-threat-response"
       ]
     }
+  ],
+  "exported_tags": [
+    "Proofpoint",
+    "proofpoint-threat-response"
   ]
 }

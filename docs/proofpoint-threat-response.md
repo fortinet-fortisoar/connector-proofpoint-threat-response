@@ -58,7 +58,7 @@ The following automated operations can be included in playbooks, and you can als
 | Get Incidents List | Retrieves metadata for all incidents from Proofpoint Threat Response, based on the filter criteria you have specified, such as the state of the incident or its time of closure. | get_incidents <br>Investigation |
 | Add Comment To Incident | Adds a comment to an existing incident in Proofpoint Threat Response, based on the incident ID you have specified. | add_comment_to_incident <br>Investigation |
 | Update Comment To Incident | Updates a comment on an existing incident in Proofpoint Threat Response, based on the incident ID you have specified. | update_comment_to_incident <br>Investigation |
-| Add User To Incident | Assigns a user to the specified incident, as either a target or an attacker. | add_user_to_incident <br>Investigation |
+| Add User To Incident | Assigns users to the specified incident by designating both the Target and the Attacker. | add_user_to_incident <br>Investigation |
 | Ingest Alert | Ingests an alert into Proofpoint Threat Response based on the input parameters you have specified. | ingest_alert <br>Investigation |
 | Close Incident | Closes an incident in Proofpoint Threat Response based on the input parameters you have specified. | close_incident <br>Investigation |
 | Verify Quarantine | Verifies whether the specified email has been quarantined. | verify_quarantine <br>Investigation |
