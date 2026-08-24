@@ -10,7 +10,7 @@
   "cs_compatible": true,
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "https://github.com/fortinet-fortisoar/connector-proofpoint-threat-response/blob/release/1.0.0/docs/proofpoint-threat-response.md",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-proofpoint-threat-response/blob/release/1.0.1/docs/proofpoint-threat-response.md",
   "configuration": {
     "fields": [
       {
@@ -31,8 +31,8 @@
         "type": "text",
         "name": "username",
         "parameter_type": "header_param",
-        "description": "Specify the Username used to access the Proofpoint Threat Response server to connect and perform automated operations.",
-        "tooltip": "Specify the Username used to access the Proofpoint Threat Response server to connect and perform automated operations."
+        "description": "Specify the username used to access the Proofpoint Threat Response server to connect and perform automated operations.",
+        "tooltip": "Specify the username used to access the Proofpoint Threat Response server to connect and perform automated operations."
       },
       {
         "title": "Password",
@@ -42,8 +42,8 @@
         "type": "text",
         "name": "password",
         "parameter_type": "header_param",
-        "description": "Specify the Password used to access the Proofpoint Threat Response server to connect and perform automated operations.",
-        "tooltip": "Specify the Password used to access the Proofpoint Threat Response server to connect and perform automated operations."
+        "description": "Specify the password used to access the Proofpoint Threat Response server to connect and perform automated operations.",
+        "tooltip": "Specify the password used to access the Proofpoint Threat Response server to connect and perform automated operations."
       },
       {
         "title": "Verify SSL",
@@ -53,8 +53,8 @@
         "visible": true,
         "type": "checkbox",
         "value": true,
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
-        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True."
       }
     ]
   },
@@ -71,8 +71,8 @@
           "name": "list_id",
           "title": "List ID",
           "type": "text",
-          "description": "Specify the ID of list to fetch the details.",
-          "tooltip": "Specify the ID of list to fetch the details.",
+          "description": "Specify the ID of the list whose indicators you want to retrieve.",
+          "tooltip": "Specify the ID of the list whose indicators you want to retrieve.",
           "required": true,
           "editable": true,
           "visible": true
@@ -85,15 +85,15 @@
       "title": "Add Indicators",
       "category": "investigation",
       "annotation": "add_to_list",
-      "description": "Add indicators to the specified list.",
+      "description": "Adds the specified indicators to the specified list.",
       "output_schema": [],
       "parameters": [
         {
           "name": "list_id",
           "title": "List ID",
           "type": "text",
-          "description": "Specify the ID of list to add provided indicators.",
-          "tooltip": "Specify the ID of list to add provided indicators.",
+          "description": "Specify the ID of the list to which you want to add the specified indicators.",
+          "tooltip": "Specify the ID of the list to which you want to add the specified indicators.",
           "required": true,
           "editable": true,
           "visible": true
@@ -102,8 +102,8 @@
           "name": "indicator",
           "title": "Indicator",
           "type": "text",
-          "description": "Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
-          "tooltip": "Specify the Indicator values. Value can be IP Address, URLs, Domains or file hashes. e.g. 192.168.1.1,192.168.1.2",
+          "description": "Specify the indicator values to add to the list. Values can be IP addresses, URLs, domains, or file hashes. For example, 192.168.1.1,192.168.1.2.",
+          "tooltip": "Specify the indicator values to add to the list. Values can be IP addresses, URLs, domains, or file hashes. For example, 192.168.1.1,192.168.1.2.",
           "required": true,
           "editable": true,
           "visible": true
@@ -112,7 +112,7 @@
           "name": "description",
           "title": "Comment",
           "type": "text",
-          "description": "Specify the comment to add with this operation.",
+          "description": "(Optional) Specify the comment to add with this operation.",
           "tooltip": "Specify the comment to add with this operation.",
           "required": false,
           "editable": true,
@@ -122,7 +122,7 @@
           "name": "expiration",
           "title": "Expiration",
           "type": "datetime",
-          "description": "Specify the expiration of the indicator.",
+          "description": "(Optional) Specify the expiration of the indicator.",
           "tooltip": "Specify the expiration of the indicator.",
           "required": false,
           "editable": true,
@@ -136,7 +136,7 @@
       "title": "Block IP Addresses",
       "category": "containment",
       "annotation": "block_ip",
-      "description": "Block the supplied IP Addresses in to the specified IP Addresses block list.",
+      "description": "Blocks the specified IP addresses by adding them to the specified IP address block list.",
       "output_schema": [],
       "parameters": [
         {
@@ -151,10 +151,10 @@
         },
         {
           "name": "list_id",
-          "title": "Blacklist ID",
+          "title": "Blocklist ID",
           "type": "text",
-          "description": "Specify the ID of IP block list.",
-          "tooltip": "Specify the ID of IP block list.",
+          "description": "Specify the ID of the IP address block list.",
+          "tooltip": "Specify the ID of the IP address block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -163,8 +163,8 @@
           "name": "expiration",
           "title": "Expiration",
           "type": "datetime",
-          "description": "Specify the date and time the supplied IP addresses should be removed from the block list.",
-          "tooltip": "Specify the date and time the supplied IP addresses should be removed from the block list.",
+          "description": "Specify the date and time at which the specified IP addresses should be removed from the block list.",
+          "tooltip": "(Optional) Specify the date and time at which the specified IP addresses should be removed from the block list.",
           "required": false,
           "editable": true,
           "visible": true
@@ -177,7 +177,7 @@
       "title": "Block Domain",
       "category": "containment",
       "annotation": "block_domain",
-      "description": "Block the supplied domains to the specified domains block list.",
+      "description": "Blocks the specified domains by adding them to the specified domain block list.",
       "output_schema": [],
       "parameters": [
         {
@@ -192,10 +192,10 @@
         },
         {
           "name": "list_id",
-          "title": "Blacklist ID",
+          "title": "Blocklist ID",
           "type": "text",
-          "description": "Specify the ID of domain block list.",
-          "tooltip": "Specify the ID of domain block list.",
+          "description": "Specify the ID of the domain block list.",
+          "tooltip": "Specify the ID of the domain block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -204,8 +204,8 @@
           "name": "expiration",
           "title": "Expiration",
           "type": "datetime",
-          "description": "Specify the date and time the supplied domains should be removed from the block list.",
-          "tooltip": "Specify the date and time the supplied domains should be removed from the block list.",
+          "description": "(Optional) Specify the date and time at which the specified domains should be removed from the block list.",
+          "tooltip": "Specify the date and time at which the specified domains should be removed from the block list.",
           "required": false,
           "editable": true,
           "visible": true
@@ -218,7 +218,7 @@
       "title": "Block URL",
       "category": "containment",
       "annotation": "block_url",
-      "description": "Block the supplied URLs to the specified URLs block list.",
+      "description": "Blocks the specified URLs by adding them to the specified URL block list.",
       "output_schema": [],
       "parameters": [
         {
@@ -233,10 +233,10 @@
         },
         {
           "name": "list_id",
-          "title": "Blacklist ID",
+          "title": "Blocklist ID",
           "type": "text",
-          "description": "Specify the ID of URL block list.",
-          "tooltip": "Specify the ID of URL block list.",
+          "description": "Specify the ID of the URL block list.",
+          "tooltip": "Specify the ID of the URL block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -245,8 +245,8 @@
           "name": "expiration",
           "title": "Expiration",
           "type": "datetime",
-          "description": "Specify the date and time the supplied URLs should be removed from the block list.",
-          "tooltip": "Specify the date and time the supplied URLs should be removed from the block list.",
+          "description": "(Optional) Specify the date and time at which the specified URLs should be removed from the block list.",
+          "tooltip": "Specify the date and time at which the specified URLs should be removed from the block list.",
           "required": false,
           "editable": true,
           "visible": true
@@ -259,7 +259,7 @@
       "title": "Block File Hash",
       "category": "containment",
       "annotation": "block_hash",
-      "description": "Block the supplied file hashes to the specified file hash block list.",
+      "description": "Blocks the specified file hashes by adding them to the specified file hash block list.",
       "output_schema": [],
       "parameters": [
         {
@@ -274,10 +274,10 @@
         },
         {
           "name": "list_id",
-          "title": "Blacklist ID",
+          "title": "Blocklist ID",
           "type": "text",
-          "description": "Specify the ID of hashes block list.",
-          "tooltip": "Specify the ID of hashes block list.",
+          "description": "Specify the ID of the file hash block list.",
+          "tooltip": "Specify the ID of the file hash block list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -286,8 +286,8 @@
           "name": "expiration",
           "title": "Expiration",
           "type": "datetime",
-          "description": "Specify the date and time the supplied file hashes should be removed from the block list.",
-          "tooltip": "Specify the date and time the supplied file hashes should be removed from the block list.",
+          "description": "(Optional) Specify the date and time at which the specified file hashes should be removed from the block list.",
+          "tooltip": "Specify the date and time at which the specified file hashes should be removed from the block list.",
           "required": false,
           "editable": true,
           "visible": true
@@ -300,25 +300,25 @@
       "title": "Search Indicator",
       "category": "investigation",
       "annotation": "search_indicator",
-      "description": "Retrieves the indicators from the specified list, according to the defined filter.",
+      "description": "Retrieves indicators from the specified list, based on the filter you have specified.",
       "output_schema": [],
       "parameters": [
         {
           "name": "filter",
           "title": "Filter",
           "type": "text",
-          "description": "Specify the filter for the indicator search. e.g. For example, \"1.1\" will return [1.1.1.1, 22.22.1.1, 1.1.22.22]",
-          "tooltip": "Specify the filter for the indicator search. e.g. For example, \"1.1\" will return [1.1.1.1, 22.22.1.1, 1.1.22.22]",
+          "description": "(Optional) Specify the filter to use for the indicator search. For example, specifying 1.1 returns 1.1.1.1, 22.22.1.1, and 1.1.22.22.",
+          "tooltip": "Specify the filter to use for the indicator search. For example, specifying 1.1 returns 1.1.1.1, 22.22.1.1, and 1.1.22.22.",
           "required": false,
           "editable": true,
           "visible": true
         },
         {
           "name": "list_id",
-          "title": "Blacklist ID",
+          "title": "Blocklist ID",
           "type": "text",
-          "description": "Specify the ID of the list in which to search.",
-          "tooltip": "Specify the ID of the list in which to search.",
+          "description": "Specify the ID of the list in which you want to search.",
+          "tooltip": "Specify the ID of the list in which you want to search.",
           "required": true,
           "editable": true,
           "visible": true
@@ -332,15 +332,15 @@
       "http_method": "DELETE",
       "category": "investigation",
       "annotation": "delete_indicator",
-      "description": "Removes an indicator from Proofpoint Threat Response based on the input parameters.",
+      "description": "Removes an indicator from Proofpoint Threat Response based on the input parameters you have specified.",
       "output_schema": [],
       "parameters": [
         {
           "name": "list_id",
           "title": "List ID",
           "type": "text",
-          "description": "Specify the ID of list to delete provided members.",
-          "tooltip": "Specify the ID of list to delete provided members.",
+          "description": "Specify the ID of the list from which you want to delete the specified indicator.",
+          "tooltip": "Specify the ID of the list from which you want to delete the specified indicator.",
           "required": true,
           "editable": true,
           "visible": true
@@ -349,8 +349,8 @@
           "name": "indicator_id",
           "title": "Indicator ID",
           "type": "text",
-          "description": "Specify the indicator ID to delete from the list.",
-          "tooltip": "Specify the indicator ID to delete from the list.",
+          "description": "Specify the ID of the indicator that you want to delete from the list.",
+          "tooltip": "Specify the ID of the indicator that you want to delete from the list.",
           "required": true,
           "editable": true,
           "visible": true
@@ -363,15 +363,15 @@
       "title": "Get Incident By ID",
       "category": "investigation",
       "annotation": "get_incident",
-      "description": "Get incident metadata from Threat Response.",
+      "description": "Retrieves the metadata of the specified incident from Proofpoint Threat Response.",
       "output_schema": [],
       "parameters": [
         {
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify ID of incident to fetch details.",
-          "tooltip": "Specify ID of incident to fetch details.",
+          "description": "Specify the ID of the incident whose details you want to retrieve.",
+          "tooltip": "Specify the ID of the incident whose details you want to retrieve.",
           "required": true,
           "editable": true,
           "visible": true
@@ -380,8 +380,8 @@
           "name": "expand_events",
           "title": "Expand Events",
           "type": "checkbox",
-          "description": "Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
-          "tooltip": "Specify the events, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "description": "Select this option to return full event objects in the response. If you clear this option, an array of event IDs is returned instead, which significantly speeds up the response time of the API for incidents that contain a large number of alerts.",
+          "tooltip": "Select this option to return full event objects in the response. If you clear this option, an array of event IDs is returned instead, which significantly speeds up the response time of the API for incidents that contain a large number of alerts.",
           "required": true,
           "editable": true,
           "visible": true
@@ -394,15 +394,15 @@
       "title": "Get Incidents List",
       "category": "investigation",
       "annotation": "get_incidents",
-      "description": "Retrieves all incident metadata from Threat Response by specifying filter criteria such as the state of the incident or time of closure.",
+      "description": "Retrieves metadata for all incidents from Proofpoint Threat Response, based on the filter criteria you have specified, such as the state of the incident or its time of closure.",
       "output_schema": [],
       "parameters": [
         {
           "name": "state",
           "title": "State",
           "type": "select",
-          "description": "Specify the state of the incidents to retrieve.",
-          "tooltip": "Specify the state of the incidents to retrieve.",
+          "description": "(Optional) Select the state of the incidents that you want to retrieve. You can choose from New, Open, Assigned, Closed, and Ignored.",
+          "tooltip": "(Optional) Select the state of the incidents that you want to retrieve. You can choose from New, Open, Assigned, Closed, and Ignored.",
           "options": [
             "New",
             "Open",
@@ -418,8 +418,8 @@
           "name": "created_after",
           "title": "Create After",
           "type": "datetime",
-          "description": "Specify the date and time to retrieve incidents that were created after this date.",
-          "tooltip": "Specify the date and time to retrieve incidents that were created after this date.",
+          "description": "(Optional) Specify the date and time to retrieve incidents that were created after this date and time.",
+          "tooltip": "Specify the date and time to retrieve incidents that were created after this date and time.",
           "required": false,
           "editable": true,
           "visible": true
@@ -428,8 +428,8 @@
           "name": "created_before",
           "title": "Created Before",
           "type": "datetime",
-          "description": "Specify the date and time to retrieve incidents that were created before this date.",
-          "tooltip": "Specify the date and time to retrieve incidents that were created before this date.",
+          "description": "(Optional) Specify the date and time to retrieve incidents that were created before this date and time.",
+          "tooltip": "Specify the date and time to retrieve incidents that were created before this date and time.",
           "required": false,
           "editable": true,
           "visible": true
@@ -438,8 +438,8 @@
           "name": "closed_after",
           "title": "Closed After",
           "type": "datetime",
-          "description": "Specify the date and time to retrieve incidents that were closed after this date.",
-          "tooltip": "Specify the date and time to retrieve incidents that were closed after this date.",
+          "description": "(Optional) Specify the date and time to retrieve incidents that were closed after this date and time.",
+          "tooltip": "Specify the date and time to retrieve incidents that were closed after this date and time.",
           "required": false,
           "editable": true,
           "visible": true
@@ -448,8 +448,8 @@
           "name": "closed_before",
           "title": "Closed Before",
           "type": "datetime",
-          "description": "Specify the date and time to retrieve incidents that were closed before this date.",
-          "tooltip": "Specify the date and time to retrieve incidents that were closed before this date.",
+          "description": "(Optional) Specify the date and time to retrieve incidents that were closed before this date and time.",
+          "tooltip": "Specify the date and time to retrieve incidents that were closed before this date and time.",
           "required": false,
           "editable": true,
           "visible": true
@@ -458,8 +458,8 @@
           "name": "expand_events",
           "title": "Expand Events",
           "type": "checkbox",
-          "description": "Specify the expand events check, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
-          "tooltip": "Specify the expand events check, If false, will return an array of event IDs instead of full event objects. This will significantly speed up the response time of the API for incidents with large numbers of alerts.",
+          "description": "(Optional) Select this option to return full event objects in the response. If you clear this option, an array of event IDs is returned instead, which significantly speeds up the response time of the API for incidents that contain a large number of alerts.",
+          "tooltip": "Select this option to return full event objects in the response. If you clear this option, an array of event IDs is returned instead, which significantly speeds up the response time of the API for incidents that contain a large number of alerts.",
           "required": false,
           "editable": true,
           "visible": true
@@ -468,8 +468,8 @@
           "name": "limit",
           "title": "Limit",
           "type": "text",
-          "description": "Specify the maximum number of incidents to return. The default value is 50.",
-          "tooltip": "Specify the maximum number of incidents to return. The default value is 50.",
+          "description": "(Optional) Specify the maximum number of incidents that this operation should return. By default, this is set to 50.",
+          "tooltip": "Specify the maximum number of incidents that this operation should return. By default, this is set to 50.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -483,15 +483,15 @@
       "title": "Add Comment To Incident",
       "category": "investigation",
       "annotation": "add_comment_to_incident",
-      "description": "Adds comments to an existing Threat Response incident, by incident ID.",
+      "description": "Adds a comment to an existing incident in Proofpoint Threat Response, based on the incident ID you have specified.",
       "output_schema": [],
       "parameters": [
         {
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident ID.",
-          "tooltip": "Specify the incident ID.",
+          "description": "Specify the ID of the incident to which you want to add the comment.",
+          "tooltip": "Specify the ID of the incident to which you want to add the comment.",
           "required": true,
           "editable": true,
           "visible": true
@@ -500,8 +500,8 @@
           "name": "comment",
           "title": "Comment",
           "type": "text",
-          "description": "Specify the comment to add.",
-          "tooltip": "Specify the comment to add.",
+          "description": "Specify the comment to add to the specified incident.",
+          "tooltip": "Specify the comment to add to the specified incident.",
           "required": true,
           "editable": true,
           "visible": true
@@ -510,8 +510,8 @@
           "name": "description",
           "title": "Description",
           "type": "text",
-          "description": "Specify the description to add this operation.",
-          "tooltip": "Specify the description to add this operation.",
+          "description": "(Optional) Specify the description to add with this operation.",
+          "tooltip": "Specify the description to add with this operation.",
           "required": false,
           "editable": true,
           "visible": true
@@ -524,15 +524,15 @@
       "title": "Update Comment To Incident",
       "category": "investigation",
       "annotation": "update_comment_to_incident",
-      "description": "Update the comments to an existing Threat Response incident, by incident ID.",
+      "description": "Updates a comment on an existing incident in Proofpoint Threat Response, based on the incident ID you have specified.",
       "output_schema": [],
       "parameters": [
         {
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident ID.",
-          "tooltip": "Specify the incident ID.",
+          "description": "Specify the ID of the incident whose comment you want to update.",
+          "tooltip": "Specify the ID of the incident whose comment you want to update.",
           "required": true,
           "editable": true,
           "visible": true
@@ -541,9 +541,9 @@
           "name": "comment",
           "title": "Comment",
           "type": "text",
-          "description": "Specify the comment to update.",
-          "tooltip": "Specify the comment to update.",
-          "required": false,
+          "description": "Specify the updated comment.",
+          "tooltip": "Specify the updated comment.",
+          "required": true,
           "editable": true,
           "visible": true
         },
@@ -551,8 +551,8 @@
           "name": "description",
           "title": "Description",
           "type": "text",
-          "description": "Specify the description to add this operation.",
-          "tooltip": "Specify the description to add this operation.",
+          "description": "(Optional) Specify the description to add with this operation.",
+          "tooltip": "Specify the description to add with this operation.",
           "required": false,
           "editable": true,
           "visible": true
@@ -565,15 +565,15 @@
       "title": "Add User To Incident",
       "category": "investigation",
       "annotation": "add_user_to_incident",
-      "description": "Assigns a user to an incident as a target or attacker.",
+      "description": "Assigns users to the specified incident by designating both the Target and the Attacker.",
       "output_schema": [],
       "parameters": [
         {
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the incident ID.",
-          "tooltip": "Specify the incident ID.",
+          "description": "Specify the ID of the incident to which you want to add the user.",
+          "tooltip": "Specify the ID of the incident to which you want to add the user.",
           "required": true,
           "editable": true,
           "visible": true
@@ -582,8 +582,8 @@
           "name": "targets",
           "title": "Targets",
           "type": "text",
-          "description": "Specify the list of targets to add to the incident.",
-          "tooltip": "Specify the list of targets to add to the incident.",
+          "description": "Specify the list of targets to add to the specified incident.",
+          "tooltip": "Specify the list of targets to add to the specified incident.",
           "required": true,
           "editable": true,
           "visible": true
@@ -592,8 +592,8 @@
           "name": "attackers",
           "title": "Attackers",
           "type": "text",
-          "description": "Specify the list of attackers to add to the incident.",
-          "tooltip": "Specify the list of attackers to add to the incident.",
+          "description": "Specify the list of attackers to add to the specified incident.",
+          "tooltip": "Specify the list of attackers to add to the specified incident.",
           "required": true,
           "editable": true,
           "visible": true
@@ -606,15 +606,15 @@
       "title": "Ingest Alert",
       "category": "investigation",
       "annotation": "ingest_alert",
-      "description": "Ingest an alert into Threat Response.",
+      "description": "Ingests an alert into Proofpoint Threat Response based on the input parameters you have specified.",
       "output_schema": [],
       "parameters": [
         {
           "name": "json_version",
           "title": "JSON Version",
           "type": "text",
-          "description": "Specify the Threat Response JSON version.\nPossible values are: 2.0, 1.0. Default is 2.0.",
-          "tooltip": "Specify the Threat Response JSON version.\nPossible values are: 2.0, 1.0. Default is 2.0.",
+          "description": "Specify the Proofpoint Threat Response JSON version. You can choose from 2.0 and 1.0. By default, this is set to 2.0.",
+          "tooltip": "Specify the Proofpoint Threat Response JSON version. You can choose from 2.0 and 1.0. By default, this is set to 2.0.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -624,8 +624,8 @@
           "name": "post_url_id",
           "title": "Post URL ID",
           "type": "text",
-          "description": "Specify the POST URL of the JSON alert source. You can find it by navigating to Sources -> JSON event source -> POST URL.",
-          "tooltip": "Specify the POST URL of the JSON alert source. You can find it by navigating to Sources -> JSON event source -> POST URL.",
+          "description": "(Optional) Specify the POST URL of the JSON alert source. You can find this URL by navigating to Sources > JSON event source > POST URL.",
+          "tooltip": "Specify the POST URL of the JSON alert source. You can find this URL by navigating to Sources > JSON event source > POST URL.",
           "required": false,
           "editable": true,
           "visible": true
@@ -634,8 +634,8 @@
           "name": "attacker",
           "title": "Attacker",
           "type": "json",
-          "description": "Specify an attacker object in JSON format : \"{\"attacker\" : {...}}\". The attacker object must contain one of [\"ip_address\", mac_address\", \"host_name\", \"url\", \"user\"] keys. You can also add the \"port\" key to the object. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify an attacker object in JSON format : \"{\"attacker\" : {...}}\". The attacker object must contain one of [\"ip_address\", mac_address\", \"host_name\", \"url\", \"user\"] keys. You can also add the \"port\" key to the object. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify an attacker object, in the JSON format: {\"attacker\": {...}}. The attacker object must contain one of the following keys: ip_address, mac_address, host_name, url, or user. You can also add the port key to this object. For more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify an attacker object, in the JSON format: {\"attacker\": {...}}. The attacker object must contain one of the following keys: ip_address, mac_address, host_name, url, or user. You can also add the port key to this object. For more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -644,8 +644,8 @@
           "name": "classification",
           "title": "Classification",
           "type": "select",
-          "description": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
-          "tooltip": "Specify the alert classification shown as \"Alert Type\" in the TRAP UI.",
+          "description": "(Optional) Select the alert classification, which is displayed as Alert Type in the Proofpoint Threat Response UI. You can choose from Malware, Policy Violation, Vulnerability, Network, Spam, Phish, Command and Control, Data Match, Authentication, System Behavior, Impostor, Reported Abuse, and Unknown.",
+          "tooltip": "Select the alert classification, which is displayed as Alert Type in the Proofpoint Threat Response UI. You can choose from Malware, Policy Violation, Vulnerability, Network, Spam, Phish, Command and Control, Data Match, Authentication, System Behavior, Impostor, Reported Abuse, and Unknown.",
           "options": [
             "Malware",
             "Policy Violation",
@@ -669,8 +669,8 @@
           "name": "cnc_hosts",
           "title": "CNC Hosts",
           "type": "json",
-          "description": "Specify the Command and Control host information in JSON format : \"{\"cnc_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}, ...]}\".\nNote: Every item of the \"cnc_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify the Command and Control host information in JSON format : \"{\"cnc_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}, ...]}\".\nNote: Every item of the \"cnc_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify the command and control host information, in the JSON format: {\"cnc_hosts\": [{\"host\": \"-\", \"port\": \"-\"}, ...]}. Every item of the cnc_hosts list is in the JSON format. For more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify the command and control host information, in the JSON format: {\"cnc_hosts\": [{\"host\": \"-\", \"port\": \"-\"}, ...]}. Every item of the cnc_hosts list is in the JSON format. For more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -679,8 +679,8 @@
           "name": "detector",
           "title": "Detector",
           "type": "json",
-          "description": "Specify the threat detection tool such as Firewall and IPS/IDS systems (in the format: \"{\"detector\" : {...}}\"), which generated the original alert. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify the threat detection tool such as Firewall and IPS/IDS systems (in the format: \"{\"detector\" : {...}}\"), which generated the original alert. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify the threat detection tool, such as a firewall or an IPS/IDS system, that generated the original alert, in the JSON format: {\"detector\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify the threat detection tool, such as a firewall or an IPS/IDS system, that generated the original alert, in the JSON format: {\"detector\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -689,8 +689,8 @@
           "name": "email",
           "title": "Email",
           "type": "json",
-          "description": "Specify the email metadata related to the alert, in JSON format: \"{\"email\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify the email metadata related to the alert, in JSON format: \"{\"email\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify the email metadata related to the alert, in the JSON format: {\"email\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify the email metadata related to the alert, in the JSON format: {\"email\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -699,8 +699,8 @@
           "name": "forensics_hosts",
           "title": "Forensics Hosts",
           "type": "json",
-          "description": "Specify the forensics host information in JSON format : \"{\"forensics_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}...]}\".\nNote: Every item of the \"forensics_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify the forensics host information in JSON format : \"{\"forensics_hosts\": [{\"host\" : \"-\", \"port\": \"-\"}...]}\".\nNote: Every item of the \"forensics_hosts\" list is in JSON format. For more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify the forensics host information, in the JSON format: {\"forensics_hosts\": [{\"host\": \"-\", \"port\": \"-\"}, ...]}. Every item of the forensics_hosts list is in the JSON format. For more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify the forensics host information, in the JSON format: {\"forensics_hosts\": [{\"host\": \"-\", \"port\": \"-\"}, ...]}. Every item of the forensics_hosts list is in the JSON format. For more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -709,8 +709,8 @@
           "name": "link_attribute",
           "title": "Link Attribute",
           "type": "select",
-          "description": "Specify the attribute to link to the alerts.",
-          "tooltip": "Specify the attribute to link to the alerts.",
+          "description": "(Optional) Select the attribute to link to the alerts. You can choose from Target IP Address, Target Hostname, Target Machine Name, Target User, Target Mac Address, Attacker IP Address, Attacker Hostname, Attacker Machine Name, Attacker User, Attacker Mac Address, Email Recipient, Email Sender, Email Subject, Message ID, Threat Filename, and Threat Filehash.",
+          "tooltip": "Select the attribute to link to the alerts. You can choose from Target IP Address, Target Hostname, Target Machine Name, Target User, Target Mac Address, Attacker IP Address, Attacker Hostname, Attacker Machine Name, Attacker User, Attacker Mac Address, Email Recipient, Email Sender, Email Subject, Message ID, Threat Filename, and Threat Filehash.",
           "options": [
             "Target IP Address",
             "Target Hostname",
@@ -737,8 +737,8 @@
           "name": "severity",
           "title": "Severity",
           "type": "select",
-          "description": "Specify the severity of the alert.",
-          "tooltip": "Specify the severity of the alert.",
+          "description": "(Optional) Select the severity of the alert. You can choose from Info, Minor, Moderate, Major, Critical, Informational, Low, Medium, and High.",
+          "tooltip": "Select the severity of the alert. You can choose from Info, Minor, Moderate, Major, Critical, Informational, Low, Medium, and High.",
           "options": [
             "Info",
             "Minor",
@@ -748,8 +748,7 @@
             "Informational",
             "Low",
             "Medium",
-            "High",
-            "Critical"
+            "High"
           ],
           "required": false,
           "editable": true,
@@ -759,8 +758,8 @@
           "name": "summary",
           "title": "Summary",
           "type": "text",
-          "description": "Specify the alert summary. This argument will populate the Alert Details field.",
-          "tooltip": "Specify the alert summary. This argument will populate the Alert Details field.",
+          "description": "(Optional) Specify the alert summary. This value populates the Alert Details field.",
+          "tooltip": "Specify the alert summary. This value populates the Alert Details field.",
           "required": false,
           "editable": true,
           "visible": true
@@ -769,8 +768,8 @@
           "name": "target",
           "title": "Target",
           "type": "json",
-          "description": "Specify the target host information in JSON format : \"{\"target\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify the target host information in JSON format : \"{\"target\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify the target host information, in the JSON format: {\"target\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify the target host information, in the JSON format: {\"target\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -779,8 +778,8 @@
           "name": "threat_info",
           "title": "Threat Info",
           "type": "json",
-          "description": "Specify the threat information in JSON format: \"{\"threat_info\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify the threat information in JSON format: \"{\"threat_info\": {...}}\". To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify the threat information, in the JSON format: {\"threat_info\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "(Optional) Specify the threat information, in the JSON format: {\"threat_info\": {...}}. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -789,8 +788,8 @@
           "name": "custom_fields",
           "title": "Custom Fields",
           "type": "json",
-          "description": "Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Threat Response, in the format: \"{\"custom_fields\": {..}}\". Although there is no limit to the number of custom fields, Proofpoint recommends keeping it to 10 or fewer fields. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
-          "tooltip": "Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Threat Response, in the format: \"{\"custom_fields\": {..}}\". Although there is no limit to the number of custom fields, Proofpoint recommends keeping it to 10 or fewer fields. To see all relevant JSON fields and for more information, see Proofpoint TRAP documentation under \"JSON Alert Source 2.0\".",
+          "description": "(Optional) Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Proofpoint Threat Response, in the format: {\"custom_fields\": {...}}. Although there is no limit to the number of custom fields, Proofpoint recommends keeping this to 10 or fewer fields. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
+          "tooltip": "Specify a JSON object for collecting custom name-value pairs as part of the JSON alert sent to Proofpoint Threat Response, in the format: {\"custom_fields\": {...}}. Although there is no limit to the number of custom fields, Proofpoint recommends keeping this to 10 or fewer fields. For all the relevant JSON fields and for more information, see the Proofpoint TRAP documentation under JSON Alert Source 2.0.",
           "required": false,
           "editable": true,
           "visible": true
@@ -803,15 +802,15 @@
       "title": "Close Incident",
       "category": "investigation",
       "annotation": "close_incident",
-      "description": "Close an incident in Proofpoint Threat Response based on the input parameters you have specified.",
+      "description": "Closes an incident in Proofpoint Threat Response based on the input parameters you have specified.",
       "output_schema": [],
       "parameters": [
         {
           "name": "incident_id",
           "title": "Incident ID",
           "type": "text",
-          "description": "Specify the ID value of the incident to close.",
-          "tooltip": "Specify the ID value of the incident to close.",
+          "description": "Specify the ID of the incident that you want to close.",
+          "tooltip": "Specify the ID of the incident that you want to close.",
           "required": true,
           "editable": true,
           "visible": true
@@ -844,15 +843,15 @@
       "title": "Verify Quarantine",
       "category": "investigation",
       "annotation": "verify_quarantine",
-      "description": "Verify if an email has been quarantined.",
+      "description": "Verifies whether the specified email has been quarantined.",
       "output_schema": [],
       "parameters": [
         {
           "name": "message_id",
           "title": "Message ID",
           "type": "text",
-          "description": "Specify the ID value of an email.",
-          "tooltip": "Specify the ID value of an email.",
+          "description": "Specify the ID of the email whose quarantine status you want to verify.",
+          "tooltip": "Specify the ID of the email whose quarantine status you want to verify.",
           "required": true,
           "editable": true,
           "visible": true
@@ -861,8 +860,8 @@
           "name": "time",
           "title": "Time",
           "type": "text",
-          "description": "Specify the email delivery time (ISO8601 format).",
-          "tooltip": "Specify the email delivery time (ISO8601 format).",
+          "description": "Specify the delivery time of the email, in the ISO 8601 format.",
+          "tooltip": "Specify the delivery time of the email, in the ISO 8601 format.",
           "required": true,
           "editable": true,
           "visible": true
@@ -871,8 +870,8 @@
           "name": "recipient",
           "title": "Recipient",
           "type": "text",
-          "description": "Specify the email recipient.",
-          "tooltip": "Specify the email recipient.",
+          "description": "Specify the recipient of the email.",
+          "tooltip": "Specify the recipient of the email.",
           "required": true,
           "editable": true,
           "visible": true
