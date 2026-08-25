@@ -39,7 +39,7 @@
         "required": true,
         "editable": true,
         "visible": true,
-        "type": "text",
+        "type": "password",
         "name": "password",
         "parameter_type": "header_param",
         "description": "Specify the password used to access the Proofpoint Threat Response server to connect and perform automated operations.",
